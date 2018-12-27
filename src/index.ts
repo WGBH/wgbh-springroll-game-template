@@ -7,7 +7,7 @@ import 'pixi-animate';
 import TemplateGame from './TemplateGame';
 import * as Transition from './assets/Transition';
 
-new TemplateGame({
+const game = new TemplateGame({
     containerID: 'content',
     width:1536,
     height:768,
