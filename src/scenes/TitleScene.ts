@@ -20,7 +20,7 @@ export default class TitleScene extends Scene {
         title.anchor.x = 0.5;
         title.anchor.y = 0.5;
         this.addChild(title);
-        const logo = new PIXI.Sprite(this.assets.images.logo);
+        const logo = new PIXI.Sprite(this.cache.images.logo);
         logo.x = 1250;
         logo.y = 600;
         this.addChild(logo);

@@ -11,7 +11,7 @@ export default class GameScene extends Scene {
         return [
             {type:'animate', id:'gameArt', stage:GameArt.stage, cacheInstance:true},
             {type:'sound', id:'tvOn', path:'sounds/on.{ogg,mp3}'},
-            {type:'sound', id:'tvOff', path:'sounds/off.{ogg,mp3}'}
+            {type:'sound', id:'tvOff', path:'sounds/off.{ogg,mp3}', volume:0.3}
         ];
     }
 
@@ -39,12 +39,14 @@ export default class GameScene extends Scene {
         }
         else{
             this.sound.play('tvOn');
-            PIXI.animate.Animator.play(this.art.screen, 'turnOn', ()=>{
-                this.enableRemote();
-                PIXI.animate.Animator.play(this.art.screen, 'watchTV');
-            });
+            PIXI.animate.Animator.play(this.art.screen, 'turnOn', this.watchTV);
         }
         this.tvOn = !this.tvOn;
+    }
+
+    watchTV = ()=>{
+        this.enableRemote();
+        PIXI.animate.Animator.play(this.art.screen, 'watchTV');
     }
 
     enableRemote = ()=>{
