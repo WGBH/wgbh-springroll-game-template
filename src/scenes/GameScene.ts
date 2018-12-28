@@ -16,7 +16,7 @@ export default class GameScene extends Scene {
     }
 
     setup(){
-        this.art = this.assets.animations.gameArt as Art;
+        this.art = this.cache.animations.gameArt as Art;
         this.art.remote.button.gotoAndStop(0);
         this.art.screen.gotoAndStop(0);
         this.addChild(this.art);
