@@ -7,6 +7,8 @@ export default class GameScene extends Scene {
 
     private tvOn = false;
 
+    private counter:number;
+
     preload():AssetList{
         return [
             {type:'animate', id:'gameArt', stage:GameArt.stage, cacheInstance:true},
@@ -16,6 +18,7 @@ export default class GameScene extends Scene {
     }
 
     setup(){
+        this.dataStore.score = 0;
         this.art = this.cache.animations.gameArt as Art;
         this.art.remote.button.gotoAndStop(0);
         this.art.screen.gotoAndStop(0);
@@ -29,11 +32,18 @@ export default class GameScene extends Scene {
         this.art.remote.on('pointerup', this.buttonUp);
         this.art.remote.on('pointerupoutside', this.buttonUp);
         this.art.remote.on('pointertap', this.toggleTV);
+
+        this.art.screen.cursor = 'pointer';
+        this.art.screen.on('pointertap', ()=>{
+            this.changeScene('congratulation');
+        });
     }
 
     toggleTV = ()=>{
         this.art.remote.interactive = false;
         if(this.tvOn){
+            clearInterval(this.counter);
+            this.art.screen.interactive = false;
             this.sound.play('tvOff');
             PIXI.animate.Animator.play(this.art.screen, 'turnOff', this.enableRemote);
         }
@@ -46,7 +56,13 @@ export default class GameScene extends Scene {
 
     watchTV = ()=>{
         this.enableRemote();
+        this.art.screen.interactive = true;
         PIXI.animate.Animator.play(this.art.screen, 'watchTV');
+        this.counter = setInterval(this.countTime, 1000);
+    }
+
+    countTime = ()=>{
+        this.dataStore.score++;
     }
 
     enableRemote = ()=>{
@@ -59,6 +75,10 @@ export default class GameScene extends Scene {
 
     buttonUp = ()=>{
         this.art.remote.button.gotoAndStop(0);
+    }
+
+    cleanup(){
+        clearInterval(this.counter);
     }
 }
 
