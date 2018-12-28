@@ -2,6 +2,8 @@ import { Scene, AssetList } from 'wgbh-springroll-game';
 
 export default class TitleScene extends Scene {
 
+    private logo:PIXI.Sprite;
+
     preload():AssetList{
         return [
             {type:'image', id:'logo', path:'img/logo.png'}
@@ -20,13 +22,17 @@ export default class TitleScene extends Scene {
         title.anchor.x = 0.5;
         title.anchor.y = 0.5;
         this.addChild(title);
-        const logo = new PIXI.Sprite(this.cache.images.logo);
-        logo.x = 1250;
-        logo.y = 600;
-        this.addChild(logo);
+        this.logo = new PIXI.Sprite(this.cache.images.logo);
+        this.logo.x = 1250;
+        this.logo.y = -this.logo.height;
+        this.addChild(this.logo);
     }
 
     start(){
+        this.tween(this.logo, {y:600}, 120, this.activate, 'bounceOut');
+    }
+
+    activate = ()=>{
         this.interactive = true;
         this.cursor = 'pointer';
         this.once('pointertap', ()=>{
