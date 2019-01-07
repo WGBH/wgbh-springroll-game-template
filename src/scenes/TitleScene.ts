@@ -29,7 +29,7 @@ export default class TitleScene extends Scene {
     }
 
     start(){
-        this.tween(this.logo, {y:600}, 120, this.activate, 'bounceOut');
+        this.tween(this.logo, {y:600}, 120, 'bounceOut').promise.then(this.activate);
     }
 
     activate = ()=>{
