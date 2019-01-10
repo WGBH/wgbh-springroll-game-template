@@ -36,6 +36,6 @@
     "pixi-sound": "^2.0.3",
     "pixi.js": "^4.8.3",
     "springroll": "git+https://github.com/SpringRoll/SpringRoll.git#v2",
-    "wgbh-springroll-game": "git+ssh://git@atlas.wgbh.org:7999/sroll/wgbh-springroll-game.git#master"
+    "wgbh-springroll-game": "git+https://atlas.wgbh.org/stash/scm/sroll/wgbh-springroll-game.git#master"
   }
 }
