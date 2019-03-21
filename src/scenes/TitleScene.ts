@@ -23,14 +23,20 @@ export default class TitleScene extends Scene {
         title.anchor.y = 0.5;
         this.addChild(title);
         this.logo = new PIXI.Sprite(this.cache.images.logo);
-        this.logo.x = 1250;
         this.logo.y = -this.logo.height;
+        this.resize();
         this.addChild(this.logo);
     }
 
     start(){
         this.tween(this.logo, {y:600}, 1500, 'bounceOut').promise.then(this.activate);
     }
+
+
+    resize(){
+        this.logo.x = (this.stageManager.viewFrame.value.right - 286);
+    }
+
 
     activate = ()=>{
         this.interactive = true;

@@ -18,11 +18,20 @@ export default class GameScene extends Scene {
     }
 
     setup(){
-        this.dataStore.score = 0;
         this.art = this.cache.animations.gameArt as Art;
         this.art.remote.button.gotoAndStop(0);
         this.art.screen.gotoAndStop(0);
         this.addChild(this.art);
+    }
+
+    get score():number{
+        if(!this.dataStore.score){
+            this.dataStore.score = 0;
+        }
+        return this.dataStore.score;
+    }
+    set score(score:number){
+        this.dataStore.score = score;
     }
 
     start(){
@@ -62,7 +71,7 @@ export default class GameScene extends Scene {
     }
 
     countTime = ()=>{
-        this.dataStore.score++;
+        this.score++;
     }
 
     enableRemote = ()=>{

@@ -11,6 +11,7 @@ const game = new TemplateGame({
     containerID: 'content',
     width:1536,
     height:768,
+    altWidth:1024,
     transition: Transition.stage,
     springRollConfig: {
         features: {

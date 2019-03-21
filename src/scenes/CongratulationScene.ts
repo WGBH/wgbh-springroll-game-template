@@ -28,6 +28,6 @@ export default class CongratulationScene extends Scene {
     start(){
         this.interactive = true;
         this.cursor = 'pointer';
-        this.on('pointertap', ()=>{this.changeScene('title')});
+        this.on('pointertap', ()=>{this.changeScene('title');});
     }
 }
