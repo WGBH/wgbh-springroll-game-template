@@ -3,3 +3,8 @@ body{
     padding:0;
     background: #000;
 }
+#frame{
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow: auto;
+}
