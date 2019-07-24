@@ -1,4 +1,4 @@
-import { Scene, AssetList } from 'wgbh-springroll-game';
+import { Scene, AssetList, Tween } from 'wgbh-springroll-game';
 
 export default class TitleScene extends Scene {
 
@@ -29,7 +29,7 @@ export default class TitleScene extends Scene {
     }
 
     start(){
-        this.tween(this.logo, {y:600}, 1500, 'bounceOut').promise.then(this.activate);
+        Tween.get(this.logo).to({y:600}, 1500, 'bounceOut').call(this.activate);
     }
 
 

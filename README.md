@@ -1,6 +1,6 @@
 # WGBH SpringRoll Game Template
 
-Example project utilizing [WGBH SpringRoll Game Library](https://atlas.wgbh.org/stash/projects/SROLL/repos/wgbh-springroll-game/).
+Example project utilizing [WGBH SpringRoll Game Library](https://github.com/WGBH/wgbh-springroll-game).
 This project is based on [Springroll-Seed](https://github.com/SpringRoll/Springroll-Seed).
 
 ## Setup

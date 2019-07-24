@@ -1,4 +1,4 @@
-import { Scene, AssetList } from 'wgbh-springroll-game';
+import { Scene, AssetList, PauseableTimer } from 'wgbh-springroll-game';
 import * as GameArt from '../assets/Game';
 
 export default class GameScene extends Scene {
@@ -7,7 +7,7 @@ export default class GameScene extends Scene {
 
     private tvOn = false;
 
-    private counter:number;
+    private counter:PauseableTimer;
 
     preload():AssetList{
         return [
@@ -51,7 +51,7 @@ export default class GameScene extends Scene {
     toggleTV = ()=>{
         this.art.remote.interactive = false;
         if(this.tvOn){
-            clearInterval(this.counter);
+            this.clearInterval(this.counter);
             this.art.screen.interactive = false;
             this.sound.play('tvOff');
             PIXI.animate.Animator.play(this.art.screen, 'turnOff', this.enableRemote);
@@ -67,7 +67,7 @@ export default class GameScene extends Scene {
         this.enableRemote();
         this.art.screen.interactive = true;
         PIXI.animate.Animator.play(this.art.screen, 'watchTV');
-        this.counter = setInterval(this.countTime, 1000);
+        this.counter = this.setInterval(this.countTime, 1000);
     }
 
     countTime = ()=>{
@@ -87,7 +87,7 @@ export default class GameScene extends Scene {
     }
 
     cleanup(){
-        clearInterval(this.counter);
+        this.clearInterval(this.counter);
     }
 }
 
