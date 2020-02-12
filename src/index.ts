@@ -9,9 +9,9 @@ import * as Transition from './assets/Transition';
 
 const game = new TemplateGame({
     containerID: 'content',
-    width:1536,
-    height:768,
-    altWidth:1024,
+    width:1624,
+    height:750,
+    altWidth:1000,
     transition: Transition.stage,
     springRollConfig: {
         features: {
