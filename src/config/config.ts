@@ -1,0 +1,1 @@
+ export const CONFIG = Object.freeze({"captions":{"hello":[{"content":"Hello! How are you?","start":0,"end":1536}],"bye":[{"content":"Bye! See you later!","start":0,"end":1512}]}});
