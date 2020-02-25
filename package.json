@@ -4,10 +4,21 @@
   "description": "WGBH SpringRoll Game Boilerplate",
   "main": "deploy/index.js",
   "scripts": {
-    "start": "webpack-dev-server --env.dev",
+    "start": "npm run config && webpack-dev-server --env.dev & npm run config:watch",
+    "dev":"webpack-dev-server --env.dev",
+    "clean": "rimraf deploy",
     "build": "npm run build:release",
-    "build:release": "webpack --env.prod",
-    "build:debug": "webpack --env.dev"
+    "build:release": "npm run clean && npm run config && webpack --env.prod",
+    "build:debug": "npm run config && webpack --env.dev",
+    "config": "node tasks/concat-config.js",
+    "quickcaptions": "node tasks/quick-captions.js && npm run config",
+    "config:watch": "onchange 'src/config/*.json' -- npm run config"
+  },
+  "configDirectory": "src/config/",
+  "captionconf": {
+    "audioDirectory": "static/sounds/vo/",
+    "audioListFile": "src/config/captions.txt",
+    "outputDirectory": "src/config/"
   },
   "repository": {
     "type": "git",
@@ -29,7 +40,8 @@
     "typescript": "^3.4.3",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.3.1"
+    "webpack-dev-server": "^3.3.1",
+    "onchange": "^6.1.0"
   },
   "dependencies": {
     "pixi-animate": "^1.3.5",
