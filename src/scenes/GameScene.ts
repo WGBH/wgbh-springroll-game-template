@@ -12,10 +12,10 @@ export default class GameScene extends Scene {
     preload():AssetList{
         return [
             {type:'animate', id:'gameArt', stage:GameArt.stage, cacheInstance:true},
-            {type:'sound', id:'tvOn', path:'sounds/on.{ogg,mp3}'},
-            {type:'sound', id:'tvOff', path:'sounds/off.{ogg,mp3}', volume:0.3},
-            {type:'sound',id:'hello',path:'sounds/vo/hello.{ogg,mp3}'},
-            {type:'sound',id:'bye',path:'sounds/vo/bye.{ogg,mp3}'}
+            {type:'sound', id:'tvOn', path:'sounds/on.{ogg,mp3}',context:'sfx'},
+            {type:'sound', id:'tvOff', path:'sounds/off.{ogg,mp3}', volume:0.3,context:'sfx'},
+            {type:'sound',id:'hello',path:'sounds/vo/hello.{ogg,mp3}',context:'vo'},
+            {type:'sound',id:'bye',path:'sounds/vo/bye.{ogg,mp3}',context:'vo'}
         ];
     }
 
