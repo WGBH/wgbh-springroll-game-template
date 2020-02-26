@@ -3,3 +3,4 @@ deploy
 assets_src/RECOVER_*
 .DS_STORE
 package-lock.json
+src/config/config.ts
