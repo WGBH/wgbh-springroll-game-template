@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run config && webpack-dev-server --env.dev & npm run config:watch",
     "dev":"webpack-dev-server --env.dev",
-    "clean": "rimraf deploy",
+    "clean": "rm -rf deploy",
     "build": "npm run build:release",
     "build:release": "npm run clean && npm run config && webpack --env.prod",
     "build:debug": "npm run config && webpack --env.dev",
@@ -47,7 +47,7 @@
     "pixi-animate": "^1.3.5",
     "pixi-sound": "^2.1.4",
     "pixi.js": "^4.8.8",
-    "springroll": "^2.0.0",
+    "springroll": "2.1.1",
     "wgbh-springroll-game": "^1.1.14"
   }
 }
