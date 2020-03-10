@@ -13,12 +13,12 @@ export default class TitleScene extends Scene {
     setup(){
         const background = new PIXI.Graphics();
         background.beginFill(0xDDDDDD);
-        background.drawRect(0, 0, 1536, 768);
+        background.drawRect(0, 0, 1624, 750);
         background.endFill();
         this.addChild(background);
         const title = new PIXI.Text('Game Template', {align: 'center', fontSize: 72, fontFamily: 'Arial'});
-        title.x = 1536/2;
-        title.y = 768/2;
+        title.x = 1624/2;
+        title.y = 750/2;
         title.anchor.x = 0.5;
         title.anchor.y = 0.5;
         this.addChild(title);
@@ -29,7 +29,7 @@ export default class TitleScene extends Scene {
     }
 
     start(){
-        Tween.get(this.logo).to({y:600}, 1500, 'bounceOut').call(this.activate);
+        Tween.get(this.logo).to({y:550}, 1500, 'bounceOut').call(this.activate);
     }
 
 

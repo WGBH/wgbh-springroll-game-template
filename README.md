@@ -23,6 +23,22 @@ Builds app for release
 
 Builds the app without mangling or minifying it for easier debugging
 
+### npm run config
+
+Compress all json files within `configDirectory` in `package.json` to a `CONFIG` object in `config.ts`
+
+### npm run quickcaptions
+
+Creates a captions json file based on tab separated list of filenames and caption texts. 
+
+There are a few settings under `captionconf` in `package.json`
+
+`audioDirectory` is where the audio files are located
+
+`audioListFile` is where the TSV file of filenames and caption texts is located
+
+`outputDirectory` is where the output `captions.json` will be exported
+
 
 ## Project structure
 

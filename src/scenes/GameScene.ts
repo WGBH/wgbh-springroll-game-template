@@ -12,8 +12,10 @@ export default class GameScene extends Scene {
     preload():AssetList{
         return [
             {type:'animate', id:'gameArt', stage:GameArt.stage, cacheInstance:true},
-            {type:'sound', id:'tvOn', path:'sounds/on.{ogg,mp3}'},
-            {type:'sound', id:'tvOff', path:'sounds/off.{ogg,mp3}', volume:0.3}
+            {type:'sound', id:'tvOn', path:'sounds/on.{ogg,mp3}',context:'sfx'},
+            {type:'sound', id:'tvOff', path:'sounds/off.{ogg,mp3}', volume:0.3,context:'sfx'},
+            {type:'sound',id:'hello',path:'sounds/vo/hello.{ogg,mp3}',context:'vo'},
+            {type:'sound',id:'bye',path:'sounds/vo/bye.{ogg,mp3}',context:'vo'}
         ];
     }
 
@@ -55,10 +57,14 @@ export default class GameScene extends Scene {
             this.art.screen.interactive = false;
             this.sound.play('tvOff');
             PIXI.animate.Animator.play(this.art.screen, 'turnOff', this.enableRemote);
+            this.sound.play('bye');
+            this.stageManager.showCaption('bye');
         }
         else{
             this.sound.play('tvOn');
             PIXI.animate.Animator.play(this.art.screen, 'turnOn', this.watchTV);
+            this.sound.play('hello');
+            this.stageManager.showCaption('hello');
         }
         this.tvOn = !this.tvOn;
     }

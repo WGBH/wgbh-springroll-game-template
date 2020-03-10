@@ -12,8 +12,8 @@
     <publishFormat id="BBC1F406-65F2-4219-9304-FA48C7549E44">0</publishFormat>
   </PublishFormatProperties>
   <PublishJpegProperties enabled="true">
-    <Width>1536</Width>
-    <Height>768</Height>
+    <Width>1624</Width>
+    <Height>750</Height>
     <Progressive>0</Progressive>
     <DPI>4718592</DPI>
     <Size>0</Size>
@@ -21,8 +21,8 @@
     <MatchMovieDim>1</MatchMovieDim>
   </PublishJpegProperties>
   <PublishOamProperties enabled="true">
-    <Width>1536</Width>
-    <Height>768</Height>
+    <Width>1624</Width>
+    <Height>750</Height>
     <CurrentFramePNG>1</CurrentFramePNG>
     <CustomPNG>0</CustomPNG>
     <PNGFilePath></PNGFilePath>

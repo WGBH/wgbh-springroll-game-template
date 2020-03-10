@@ -1,7 +1,7 @@
-<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="1536" height="768" frameRate="30" currentTimeline="1" xflVersion="2.96" creatorInfo="Adobe Animate CC" platform="Macintosh" versionInfo="Saved by Animate Macintosh 18.0 build 126" majorVersion="18" buildNumber="126" guidesSnapTo="false" viewAngle3D="110.955592495494" vanishingPoint3DX="768" vanishingPoint3DY="384" nextSceneIdentifier="2" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" filetypeGUID="D30F8A0D-8234-44E1-9E30-EE48B415BE9D" filetypeName="PixiAnimate" fileGUID="50C623C588534798AB61C8E7AFFEBEEB">
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="1624" height="750" frameRate="30" currentTimeline="1" xflVersion="2.96" creatorInfo="Adobe Animate CC" platform="Macintosh" versionInfo="Saved by Animate Macintosh 18.0 build 126" majorVersion="18" buildNumber="126" guidesSnapTo="false" viewAngle3D="113.905639833042" vanishingPoint3DX="812" vanishingPoint3DY="375" nextSceneIdentifier="2" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" filetypeGUID="D30F8A0D-8234-44E1-9E30-EE48B415BE9D" filetypeName="PixiAnimate" fileGUID="50C623C588534798AB61C8E7AFFEBEEB">
      <symbols>
           <Include href="a.xml" itemIcon="1" loadImmediate="false" itemID="5c23c60f-000002d0" lastModified="1545849205"/>
-          <Include href="Background.xml" itemIcon="1" loadImmediate="false" itemID="5c23c4b8-000002b0" lastModified="1545849220"/>
+          <Include href="Background.xml" itemIcon="1" loadImmediate="false" itemID="5c23c4b8-000002b0" lastModified="1581538840"/>
           <Include href="d.xml" itemIcon="1" loadImmediate="false" itemID="5c23c613-000002d4" lastModified="1545849205"/>
           <Include href="g.xml" itemIcon="1" loadImmediate="false" itemID="5c23c627-000002e0" lastModified="1545849205"/>
           <Include href="i.xml" itemIcon="1" loadImmediate="false" itemID="5c23c61b-000002d8" lastModified="1545849205"/>
@@ -11,7 +11,7 @@
           <Include href="o.xml" itemIcon="1" loadImmediate="false" itemID="5c23c60a-000002cc" lastModified="1545849205"/>
      </symbols>
      <timelines>
-          <DOMTimeline name="Scene 1" currentFrame="32">
+          <DOMTimeline name="Scene 1" currentFrame="52">
                <layers>
                     <DOMLayer name="Layer_2" color="#9933CC" locked="true" autoNamed="false">
                          <frames>
@@ -42,9 +42,9 @@
                               </DOMFrame>
                               <DOMFrame index="8" duration="6" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Loading" selected="true" symbolType="graphic" loop="single frame">
+                                        <DOMSymbolInstance libraryItemName="Loading" symbolType="graphic" loop="single frame">
                                              <matrix>
-                                                  <Matrix tx="768" ty="372"/>
+                                                  <Matrix tx="808" ty="372"/>
                                              </matrix>
                                              <transformationPoint>
                                                   <Point/>
@@ -57,9 +57,9 @@
                               </DOMFrame>
                               <DOMFrame index="14" keyMode="9728">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Loading" selected="true" symbolType="graphic" loop="single frame">
+                                        <DOMSymbolInstance libraryItemName="Loading" symbolType="graphic" loop="single frame">
                                              <matrix>
-                                                  <Matrix tx="768" ty="372"/>
+                                                  <Matrix tx="808" ty="372"/>
                                              </matrix>
                                              <transformationPoint>
                                                   <Point/>
@@ -71,7 +71,7 @@
                                    <elements>
                                         <DOMSymbolInstance libraryItemName="Loading" symbolType="graphic" loop="loop">
                                              <matrix>
-                                                  <Matrix tx="768" ty="372"/>
+                                                  <Matrix tx="808" ty="372"/>
                                              </matrix>
                                              <transformationPoint>
                                                   <Point/>
@@ -81,9 +81,9 @@
                               </DOMFrame>
                               <DOMFrame index="52" duration="6" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Loading" selected="true" symbolType="graphic" loop="single frame">
+                                        <DOMSymbolInstance libraryItemName="Loading" symbolType="graphic" loop="single frame">
                                              <matrix>
-                                                  <Matrix tx="768" ty="372"/>
+                                                  <Matrix tx="808" ty="372"/>
                                              </matrix>
                                              <transformationPoint>
                                                   <Point/>
@@ -93,9 +93,9 @@
                               </DOMFrame>
                               <DOMFrame index="58" keyMode="9728">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Loading" selected="true" symbolType="graphic" loop="single frame">
+                                        <DOMSymbolInstance libraryItemName="Loading" symbolType="graphic" loop="single frame">
                                              <matrix>
-                                                  <Matrix tx="768" ty="372"/>
+                                                  <Matrix tx="808" ty="372"/>
                                              </matrix>
                                              <transformationPoint>
                                                   <Point/>
@@ -142,7 +142,7 @@
                               </DOMFrame>
                               <DOMFrame index="66" keyMode="9728">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Background" selected="true">
+                                        <DOMSymbolInstance libraryItemName="Background">
                                              <matrix>
                                                   <Matrix ty="-768"/>
                                              </matrix>
