@@ -27,6 +27,8 @@ Builds the app without mangling or minifying it for easier debugging
 
 Compress all json files within `configDirectory` in `package.json` to a `CONFIG` object in `config.ts`
 
+        Captions and Lipsync are generated with a similar process. You can have one or the other or both.
+
 ### npm run quickcaptions
 
 Creates a captions json file based on tab separated list of filenames and caption texts. 
@@ -39,6 +41,17 @@ There are a few settings under `captionconf` in `package.json`
 
 `outputDirectory` is where the output `captions.json` will be exported
 
+### npm run rhubarb   
+
+Creates a lipsync json file based on list of filenames (can use captions.txt if you want to have one file for both). 
+
+There are a few settings under `rhubarbconf` in `package.json`
+
+`audioDirectory` is where the audio files are located
+
+`audioListFile` is where the TSV file of filenames (and optional caption texts) is located.
+
+`outputDirectory` is where the output `lipsync.json` will be exported
 
 ## Project structure
 

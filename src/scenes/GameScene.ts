@@ -44,6 +44,12 @@ export default class GameScene extends Scene {
         this.art.remote.on('pointerupoutside', this.buttonUp);
         this.art.remote.on('pointertap', this.toggleTV);
 
+        this.art.lipsyncScene.cursor = 'pointer';
+        this.art.lipsyncScene.interactive = true;
+        this.art.lipsyncScene.on('pointerup', ()=>{
+            this.changeScene('lipsync');
+        });
+
         this.art.screen.cursor = 'pointer';
         this.art.screen.on('pointertap', ()=>{
             this.changeScene('congratulation');
@@ -58,7 +64,7 @@ export default class GameScene extends Scene {
             this.sound.play('tvOff');
             PIXI.animate.Animator.play(this.art.screen, 'turnOff', this.enableRemote);
             this.sound.play('bye');
-            this.stageManager.showCaption('bye');
+            this.stageManager.showCaption('bye');            
         }
         else{
             this.sound.play('tvOn');
@@ -102,4 +108,5 @@ interface Art extends PIXI.animate.MovieClip {
         button: PIXI.animate.MovieClip;
     };
     screen: PIXI.animate.MovieClip;
+    lipsyncScene: PIXI.animate.MovieClip;
 }

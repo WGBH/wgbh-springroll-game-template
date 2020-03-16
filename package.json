@@ -5,13 +5,14 @@
   "main": "deploy/index.js",
   "scripts": {
     "start": "npm run config && webpack-dev-server --env.dev & npm run config:watch",
-    "dev":"webpack-dev-server --env.dev",
+    "dev": "webpack-dev-server --env.dev",
     "clean": "rm -rf deploy",
     "build": "npm run build:release",
     "build:release": "npm run clean && npm run config && webpack --env.prod",
     "build:debug": "npm run config && webpack --env.dev",
     "config": "node tasks/concat-config.js",
     "quickcaptions": "node tasks/quick-captions.js && npm run config",
+    "rhubarb": "node tasks/rhubarb-audio.js && npm run config",
     "config:watch": "onchange 'src/config/*.json' -- npm run config"
   },
   "configDirectory": "src/config/",
@@ -19,6 +20,12 @@
     "audioDirectory": "static/sounds/vo/",
     "audioListFile": "src/config/captions.txt",
     "outputDirectory": "src/config/"
+  },
+  "rhubarbconf": {
+    "audioDirectory": "static/sounds/vo",
+    "audioListFile": "src/config/captions.txt",
+    "outputDirectory": "src/config/",
+    "rhubarbBinary": "/Applications/rhubarb-lip-sync-1.10.0-osx/rhubarb"
   },
   "repository": {
     "type": "git",
