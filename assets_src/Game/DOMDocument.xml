@@ -2,6 +2,8 @@
      <symbols>
           <Include href="Button.xml" loadImmediate="false" itemID="5c242ce7-0000042f" lastModified="1545875163"/>
           <Include href="Eyes.xml" itemIcon="1" loadImmediate="false" itemID="5c2433c3-00000466" lastModified="1545876419"/>
+          <Include href="LipsyncScene.xml" loadImmediate="false" itemID="5e6fd93c-0000000d" lastModified="1584388952"/>
+          <Include href="Paper.xml" loadImmediate="false" itemID="5e6fda2c-00000014" lastModified="1584388652"/>
           <Include href="Remote.xml" loadImmediate="false" itemID="5c242cb7-0000042a" lastModified="1545875115"/>
           <Include href="Screen.xml" loadImmediate="false" itemID="5c242f1c-00000441" lastModified="1545878894"/>
           <Include href="SomeGuy.xml" itemIcon="1" loadImmediate="false" itemID="5c243326-0000045a" lastModified="1545876578"/>
@@ -10,7 +12,85 @@
      <timelines>
           <DOMTimeline name="Scene 1">
                <layers>
-                    <DOMLayer name="remote" color="#009999" autoNamed="false">
+                    <DOMLayer name="ui" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMShape>
+                                             <fills>
+                                                  <FillStyle index="1">
+                                                       <SolidColor color="#6699CC"/>
+                                                  </FillStyle>
+                                             </fills>
+                                             <edges>
+                                                  <Edge fillStyle1="1" edges="!20459 5959|25498 5959!25498 5959|25498 6539!25498 6539|20459 6539!20459 6539|20459 5959"/>
+                                                  <Edge cubics="!20459 6539(;20459,6539 20459,5959 20459,5959q20459 6539 20459 5959);"/>
+                                                  <Edge cubics="!25498 5959(;25498,5959 25498,6539 25498,6539q25498 5959 25498 6539);"/>
+                                                  <Edge cubics="!20459 5959(;20459,5959 25498,5959 25498,5959q20459 5959 25498 5959);"/>
+                                                  <Edge cubics="!25498 6539(;25498,6539 20459,6539 20459,6539q25498 6539 20459 6539);"/>
+                                             </edges>
+                                        </DOMShape>
+                                        <DOMStaticText fontRenderingMode="standard" left="-8" width="239.95" height="20.85" isSelectable="false">
+                                             <matrix>
+                                                  <Matrix tx="1042.95" ty="302.8"/>
+                                             </matrix>
+                                             <textRuns>
+                                                  <DOMTextRun>
+                                                       <characters>Game + captions (here)</characters>
+                                                       <textAttrs>
+                                                            <DOMTextAttrs aliasText="false" lineHeight="20.85" size="18" bitmapSize="360" face="ArialRoundedMTBold" fillColor="#FFFFFF"/>
+                                                       </textAttrs>
+                                                  </DOMTextRun>
+                                             </textRuns>
+                                        </DOMStaticText>
+                                        <DOMSymbolInstance libraryItemName="LipsyncScene" name="lipsyncScene">
+                                             <matrix>
+                                                  <Matrix tx="1148.9" ty="355.6"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMStaticText selected="true" fontRenderingMode="standard" left="-9.45" width="169.7" height="48.3" autoExpand="true" isSelectable="false">
+                                             <matrix>
+                                                  <Matrix tx="1071.45" ty="237.55"/>
+                                             </matrix>
+                                             <textRuns>
+                                                  <DOMTextRun>
+                                                       <characters>WGBH TV Guide &#xD;</characters>
+                                                       <textAttrs>
+                                                            <DOMTextAttrs alignment="center" aliasText="false" lineHeight="23.15" size="20" bitmapSize="400" face="ArialRoundedMTBold" fillColor="#663499"/>
+                                                       </textAttrs>
+                                                  </DOMTextRun>
+                                                  <DOMTextRun>
+                                                       <characters>(example scenes)</characters>
+                                                       <textAttrs>
+                                                            <DOMTextAttrs alignment="center" aliasText="false" lineSpacing="0" lineHeight="23.15" size="20" bitmapSize="400" face="ArialRoundedMTBold" fillColor="#663499"/>
+                                                       </textAttrs>
+                                                  </DOMTextRun>
+                                             </textRuns>
+                                        </DOMStaticText>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="ui_bg" color="#FF0000" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="Paper">
+                                             <matrix>
+                                                  <Matrix tx="1150.2" ty="389"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="remote" color="#009999" locked="true" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
                                    <elements>
@@ -26,11 +106,11 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="screen" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+                    <DOMLayer name="screen" color="#9933CC" locked="true" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Screen" name="screen" selected="true">
+                                        <DOMSymbolInstance libraryItemName="Screen" name="screen">
                                              <matrix>
                                                   <Matrix tx="744.2" ty="383.1"/>
                                              </matrix>
@@ -112,7 +192,7 @@
                                                   <Edge fillStyle1="1" edges="!18690 1256[18682 1238 18684 1217!18684 1217[18686 1198 18693 1181!18693 1181[18705 1155 18730 1139!18730 1139[18755 1123 18784 1123!18784 1123[18813 1123 18838 1140!18838 1140[18863 1156 18875 1183!18875 1183[18886 1209 18882 1239!18882
  1239[18877 1268 18858 1290!18858 1290[18839 1311 18809 1319!18809 1319[18780 1326 18753 1318!18753 1318[#4928.1E #51D.87 18712 1292.5!18712 1292.5[#4909.87 #4FD.A5 18690 1256"/>
                                                   <Edge strokeStyle="1" edges="
-!14973 4930|15359 4555!15364 4559|15359 4555!15359 4555|18712 1292.5"/>
+!15364 4559|15359 4555!14973 4930|15359 4555!15359 4555|18712 1292.5"/>
                                                   <Edge fillStyle1="1" edges="
 !11152 1179[11168 1154 11198 1141!11198 1141[11228 1129 11257 1136!11257 1136[11286 1144 11307 1167!11307 1167[11328 1191 11332 1221!11332 1221[11335 1251 11319 1279!11319 1279[#2C32.96 #507.3D 11309 1294!11309 1294[#2C1F.C3 #51E.D3 11276
  1320!11276 1320[11249 1333 11217 1328!11217 1328[11186 1322 11164 1301!11164 1301[11141 1277 11137 1242!11137 1242[11134 1207 11152 1179"/>
@@ -143,11 +223,36 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="background" color="#FF0000" autoNamed="false">
+                    <DOMLayer name="background" color="#FF0000" locked="true" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
                                    <elements>
-                                        <DOMRectangleObject objectWidth="1536.05" objectHeight="768" x="5.15" y="2.6" lockFlag="true">
+                                        <DOMShape>
+                                             <fills>
+                                                  <FillStyle index="1">
+                                                       <SolidColor color="#CCCCCC"/>
+                                                  </FillStyle>
+                                                  <FillStyle index="2">
+                                                       <SolidColor color="#00CC33"/>
+                                                  </FillStyle>
+                                             </fills>
+                                             <strokes>
+                                                  <StrokeStyle index="1">
+                                                       <SolidStroke scaleMode="normal">
+                                                            <fill>
+                                                                 <SolidColor/>
+                                                            </fill>
+                                                       </SolidStroke>
+                                                  </StrokeStyle>
+                                             </strokes>
+                                             <edges>
+                                                  <Edge fillStyle1="1" strokeStyle="1" edges="
+!20139 4539|23099 4539!23099 4539|23099 5759!23099 5759|20139 5759!20139 5759|20139 4539"/>
+                                                  <Edge fillStyle1="2" strokeStyle="1" edges="
+!20499 2999|22879 2999!22879 2999|22879 4219!22879 4219|20499 4219!20499 4219|20499 2999"/>
+                                             </edges>
+                                        </DOMShape>
+                                        <DOMRectangleObject objectWidth="1536.05" objectHeight="768" x="5.15" y="2.6" selected="true" lockFlag="true">
                                              <matrix>
                                                   <Matrix a="0.999969482421875" tx="-5.15" ty="-2.6"/>
                                              </matrix>
