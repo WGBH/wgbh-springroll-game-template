@@ -41,7 +41,7 @@
     <Property name="PublishSettings.IncludeInvisibleLayer">true</Property>
     <Property name="PublishSettings.PixiJS.CommonJS">true</Property>
     <Property name="PublishSettings.PixiJS.CompactShapes">true</Property>
-    <Property name="PublishSettings.PixiJS.CompressJS">true</Property>
+    <Property name="PublishSettings.PixiJS.CompressJS">false</Property>
     <Property name="PublishSettings.PixiJS.HTML">false</Property>
     <Property name="PublishSettings.PixiJS.HTMLPath">Game.html</Property>
     <Property name="PublishSettings.PixiJS.Images">true</Property>
