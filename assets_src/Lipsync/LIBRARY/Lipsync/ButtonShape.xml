@@ -10,7 +10,7 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMShape selected="true" isFloating="true">
+                <DOMShape isFloating="true">
                   <matrix>
                     <Matrix tx="27.1" ty="27.05"/>
                   </matrix>
@@ -49,7 +49,7 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMBitmapInstance libraryItemName="ButtonShape1">
+                <DOMBitmapInstance libraryItemName="UI/ButtonShape1">
                   <matrix>
                     <Matrix tx="-52" ty="-52"/>
                   </matrix>

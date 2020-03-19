@@ -1,4 +1,4 @@
-import { Scene, AssetList, PauseableTimer } from 'wgbh-springroll-game';
+import { Scene, AssetList } from 'wgbh-springroll-game';
 import * as Art from '../assets/Lipsync';
 import * as Puppet from '../helpers/puppet/PuppetMouth';
 import {CONFIG} from '../config/config';
@@ -37,8 +37,6 @@ export default class GameScene extends Scene {
         note that running the rhubarb will replace existing entries and add new entries (it will not delete existing entries, same for the captions). If you want to delete the contents of lipsync.json then do it manually.
     */
 
-    private counter:PauseableTimer;
-
     private mouthpuppet:Puppet.PuppetMouth;
 
     private lipsync = CONFIG.lipsync as Puppet.RhubarbConfig;
@@ -54,8 +52,8 @@ export default class GameScene extends Scene {
     setup(){
         this.art = this.cache.animations.Art as Art;
         this.addChild(this.art);
-        this.art.mouth.gotoAndStop(0);
         this.mouthpuppet = new Puppet.PuppetMouth(this.art.mouth);
+        this.mouthpuppet.rest();
     }
 
     start(){
@@ -72,7 +70,7 @@ export default class GameScene extends Scene {
         this.art.stopBtn.on('pointerup', (ev:PIXI.interaction.InteractionEvent) => {
             console.log("stop the sound, lipsync, and captions");           
             this.sound.vo.stopAll();
-            this.art.mouth.gotoAndStop(0);
+            this.mouthpuppet.stop();
             this.stageManager.stopCaption();
         } );
 

@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="PlayIcon" itemID="5e6a4a22-000000b8" lastModified="1584024104">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="UI/PlayIcon" itemID="5e6a4a22-000000b8" lastModified="1584024104">
   <persistentData>
     <PD n="copyLayersToBitmapScale" t="d" v="1.000000"/>
   </persistentData>
@@ -28,7 +28,7 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMBitmapInstance libraryItemName="PlayIcon1">
+                <DOMBitmapInstance libraryItemName="UI/PlayIcon1">
                   <matrix>
                     <Matrix tx="-25" ty="-30"/>
                   </matrix>

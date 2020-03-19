@@ -45,6 +45,23 @@ There are a few settings under `captionconf` in `package.json`
 
 Creates a lipsync json file based on list of filenames (can use captions.txt if you want to have one file for both). 
 
+####Installation Requirements
+
+You will need to install rhubarb globally, since you will run this from cli (https://github.com/DanielSWolf/rhubarb-lip-sync/releases)
+
+Set the path for rhubarbconf.rhubarbBinary in your package.json file, 
+e.g. "rhubarbBinary": "/Applications/rhubarb-lip-sync-1.10.0-osx/rhubarb"
+Change [/Applications/rhubarb-lip-sync-1.10.0-osx/rhubarb] to the location of rhubarb on your local machine.
+
+####Files Needed
+
+* src/config/captions.txt - list of filenames to process
+* static/sounds/vo/[files].ogg - the actual audio files to process
+* tasks/rhubarb-audio.js - processing script that will run (you don't need to modify this)
+* package.json - configuration file (you may need to configure this, see below)
+
+####Configuration
+
 There are a few settings under `rhubarbconf` in `package.json`
 
 `audioDirectory` is where the audio files are located
@@ -52,6 +69,10 @@ There are a few settings under `rhubarbconf` in `package.json`
 `audioListFile` is where the TSV file of filenames (and optional caption texts) is located.
 
 `outputDirectory` is where the output `lipsync.json` will be exported
+
+`rhubarbBinary` is where the rhubarb application is installed on your computer 
+
+Note: the LipsyncScene.ts file has an example of how to use this.
 
 ## Project structure
 

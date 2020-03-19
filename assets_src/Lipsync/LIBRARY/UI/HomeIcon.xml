@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="HomeIcon" itemID="5e6a498f-00000078" lastModified="1584024069">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="UI/HomeIcon" itemID="5e6a498f-00000078" lastModified="1584024069">
   <persistentData>
     <PD n="copyLayersToBitmapScale" t="d" v="1.000000"/>
   </persistentData>
@@ -60,7 +60,7 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMBitmapInstance selected="true" libraryItemName="HomeIcon1">
+                <DOMBitmapInstance selected="true" libraryItemName="UI/HomeIcon1">
                   <matrix>
                     <Matrix tx="-26" ty="-22"/>
                   </matrix>

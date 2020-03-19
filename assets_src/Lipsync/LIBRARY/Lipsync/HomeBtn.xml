@@ -6,7 +6,7 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="HomeIcon" selected="true">
+                <DOMSymbolInstance libraryItemName="UI/HomeIcon" selected="true">
                   <matrix>
                     <Matrix tx="-2"/>
                   </matrix>

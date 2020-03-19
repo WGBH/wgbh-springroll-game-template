@@ -6,7 +6,7 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="PlayIcon">
+                <DOMSymbolInstance libraryItemName="UI/PlayIcon">
                   <matrix>
                     <Matrix tx="8.95" ty="-1.05"/>
                   </matrix>

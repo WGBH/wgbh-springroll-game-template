@@ -19,6 +19,11 @@ export class PuppetMouth {
         this.rest();
     }
 
+    stop() {
+        this.rest();   
+        this._talking = false;
+    }
+
     rest() {
         this.mouth.gotoAndStop("X");
     }
@@ -125,8 +130,6 @@ export class PuppetMouth {
               this._talking = false;
               this._currentSoundInstance.off("progress",this.updateMouth);
             }
-        } else {
-          this._talking = false;
         }
       }
 }
