@@ -15,7 +15,7 @@ E = Rounded ("Er","R")
 F = Round/Puckered ("OO","W","O")
 G = (optional) Teeth on lip for "F"
 H = (optional) Tongue touching roof for "L" 
-X = (optional) closed again at rest, if needed to distinguish from A.
+X = closed again at rest, if needed to distinguish from A.
 
 ### Set up the puppet
 

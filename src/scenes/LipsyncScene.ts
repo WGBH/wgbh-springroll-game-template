@@ -41,6 +41,8 @@ export default class GameScene extends Scene {
 
     private lipsync = CONFIG.lipsync as Puppet.RhubarbConfig;
 
+    private current_soundinstance: PIXI.sound.IMediaInstance;
+
     preload():AssetList{
         return [
             {type:'animate', id:'Art', stage:Art.stage, cacheInstance:true},
@@ -68,33 +70,39 @@ export default class GameScene extends Scene {
         this.art.stopBtn.buttonMode = true;
         this.art.stopBtn.interactive = true;
         this.art.stopBtn.on('pointerup', (ev:PIXI.interaction.InteractionEvent) => {
-            console.log("stop the sound, lipsync, and captions");           
-            this.sound.vo.stopAll();
-            this.mouthpuppet.stop();
-            this.stageManager.stopCaption();
+            this.stopPuppetExample(this.mouthpuppet);
         } );
 
         this.art.homeBtn.buttonMode = true;
         this.art.homeBtn.interactive = true;
-        this.art.homeBtn.on('pointerup', (ev:PIXI.interaction.InteractionEvent) => {            
+        this.art.homeBtn.on('pointerup', (ev:PIXI.interaction.InteractionEvent) => {  
+            this.stopPuppetExample(this.mouthpuppet);
             this.changeScene('game');
         } );
 
     }
 
+    stopPuppetExample = (mouthpuppet:Puppet.PuppetMouth) => {
+
+        // used to completely shut down the puppet, captions, etc
+        console.log("stop the sound, lipsync, and captions");   
+        this.current_soundinstance.stop(); // hopefully that won't mess up the this.sound.vo 
+        mouthpuppet.stop();
+        this.stageManager.stopCaption();
+    }
+
     playPuppetExample = (mouthpuppet:Puppet.PuppetMouth, soundname: string) => {
 
         if(this.lipsync[soundname]) {
-            let soundinstance = this.sound.play(soundname) as PIXI.sound.IMediaInstance;
-            mouthpuppet.lipSync(soundinstance, this.lipsync[soundname]);
+            this.current_soundinstance = this.sound.play(soundname) as PIXI.sound.IMediaInstance;
+            mouthpuppet.lipSync(this.current_soundinstance, this.lipsync[soundname]);
         } else {
             console.warn("No lipsync for ", soundname);
         }
     }
 
-    cleanup(){
-        
-        this.sound.vo.stopAll();
+    cleanup(){    
+        // emtpy
     }
 }
 

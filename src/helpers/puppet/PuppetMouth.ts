@@ -1,12 +1,11 @@
 
 /**
- * PuppetMouth is a PIXI Animate MovieClip that contains frames for various mouth shapes
+ * PuppetMouth controls a PIXI Animate MovieClip that contains frames for various mouth shapes
  * It is set to be called with an audio file and configuration for the lipsync
  */
 export class PuppetMouth {
 
     mouth:PIXI.animate.MovieClip;
-    syncFlashAmp:Array<number>;
     syncRhubarb:Array<RhubarbJSON> | RhubarbArray;
     update:Function;
 
@@ -28,11 +27,6 @@ export class PuppetMouth {
         this.mouth.gotoAndStop("X");
     }
 
-    setSyncFlashAmp(syncarray:Array<number>) {
-        this.syncFlashAmp = syncarray;
-        this.update = this.updateFlashAmp.bind(this);
-    }
-
     /**
      * 
      * @param syncconfig 
@@ -52,18 +46,6 @@ export class PuppetMouth {
        this._currentDuration = syncconfig[syncconfig.length -1].end;
        this.update = this.updateJSON.bind(this);
    }
-
-    /**
-     * 
-     * updateFlashAmp takes in a FlashAmp-style array of frames at regular intervals
-     * e.g. [0,1,3,2,0,0,0,0,0,0,3,2,3,1,0]
-     * 
-     * @param position The position of the audio file, from 0 to 1
-     */
-    updateFlashAmp(position:number) {
-        const frame = this.syncFlashAmp[parseInt("" + (position * this.syncFlashAmp.length))];
-        this.mouth.gotoAndStop(frame);
-    }
 
     /**
      * 

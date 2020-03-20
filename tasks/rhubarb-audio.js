@@ -69,6 +69,18 @@ function readfiles(audiofilelist) {
     // strip out the filename in the case that there are captions included. Assume tab delimited.
     var filename = audiofilelist[index].trim().split("\t")[0];
 
+    /* todo: 
+
+    ericente notes: rhubarb has an option to feed it a txt file that corresponds 
+    with the dialog in an audio file,
+    which gives some better results. 
+    I have a process for generating those from a captions.json file that I can add at a later time.
+
+    danielhart notes: the audio text is already available here, as long as the captions file is used
+    we have the corresponding caption:  audiofilelist[index].trim().split("\t")[1]
+
+    */
+
     console.log('rhubarb ' + audioDirectory + filename);
     
     if(runrhubarb) {
