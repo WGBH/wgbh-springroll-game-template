@@ -39,7 +39,7 @@ if(audioDirectory && audioList) {
      fullconfig[i] = newconfig[i];
     }
   } catch(error) {
-    console.log("No existing json file configuration");
+    console.log("No existing json file configuration", error);
     fullconfig = newconfig;
   }
   

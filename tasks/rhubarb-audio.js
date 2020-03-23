@@ -51,8 +51,8 @@ if(audioDirectory) {
     for(var i in newconfig) {
      fullconfig[i] = newconfig[i];
     }
-  } catch {
-    console.log("No existing json file configuration");
+  } catch (error) {
+    console.log("No existing json file configuration", error);
     fullconfig = newconfig;
   }
   
