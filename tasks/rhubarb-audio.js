@@ -60,6 +60,11 @@ if(audioDirectory) {
   if(outputLocation) {
     fs.writeFileSync(outputLocation, outputstring);
   }
+  if (fs.existsSync('captionsTemp.txt')) {
+    fs.unlinkSync('captionsTemp.txt', function (err) {
+      if (err) throw err;
+    });   
+  }
   console.log("FINISHED");
 }
 
@@ -69,22 +74,35 @@ function readfiles(audiofilelist) {
     // strip out the filename in the case that there are captions included. Assume tab delimited.
     var filename = audiofilelist[index].trim().split("\t")[0];
 
-    /* todo: 
+    console.log('rhubarb ' + audioDirectory + filename);
 
-    ericente notes: rhubarb has an option to feed it a txt file that corresponds 
-    with the dialog in an audio file,
-    which gives some better results. 
-    I have a process for generating those from a captions.json file that I can add at a later time.
-
-    danielhart notes: the audio text is already available here, as long as the captions file is used
-    we have the corresponding caption:  audiofilelist[index].trim().split("\t")[1]
-
+    /* 
+    rhubarb has an option to feed it a txt file that corresponds with the dialog in an audio file, which gives some better results.
+    The audio text is available here, as long as the captions file is used.
+    If found, the dialogue is added to a temporary file (captionsTemp.txt) that is processed with the rhubarb command. 
+    The file is deleted after the proces is done.
     */
 
-    console.log('rhubarb ' + audioDirectory + filename);
+    let audiotext = audiofilelist[index].trim().split("\t")[1];
+    let audiotext2 = "";
+
+    if (audiotext) {
+
+      // console.log("Writing file for", audiotext);
+      fs.writeFileSync('captionsTemp.txt', audiotext, function (err) {
+        if (err) throw err;
+      });
+      audiotext2 = "-d captionsTemp.txt";
+
+    } else {
+      audiotext2 = "";
+    }
     
     if(runrhubarb) {
-      result = execSync(runrhubarb +' ' + audioDirectory + ensureogg(filename), (err) => {
+      if (audiotext2) {
+        console.log("Rhubarb processing audiofile with text:",audiotext);
+      }
+      result = execSync(runrhubarb +' ' + audioDirectory + ensureogg(filename) + ' ' + audiotext2, (err) => {
         if (err) {
             // node couldn't execute the command
             return;
