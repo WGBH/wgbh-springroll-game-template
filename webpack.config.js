@@ -15,7 +15,7 @@ module.exports = env => {
         ])
     ];
     return {
-        stats: 'errors-only',
+        stats: 'minimal',
         mode: env.dev ? 'development' : 'production',
         devServer: {
             contentBase: path.join(__dirname, '/static'),

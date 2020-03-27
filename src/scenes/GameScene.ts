@@ -3,7 +3,7 @@ import * as GameArt from '../assets/Game';
 
 export default class GameScene extends Scene {
 
-    private art: Art;
+    private art: Art
 
     private tvOn = false;
 
