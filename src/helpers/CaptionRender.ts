@@ -1,8 +1,7 @@
-import {IRender,CaptionLine} from 'springroll';
+import {IRender} from 'springroll';
 
 export default class CaptionRender extends PIXI.Container implements IRender {
 
-    public args:any;
     public text:PIXI.Text;
     public captionsElement:HTMLElement;
 
@@ -12,8 +11,7 @@ export default class CaptionRender extends PIXI.Container implements IRender {
         this.captionsElement.style.visibility = "hidden";
     }
 
-    start(args:any) {
-        this.args = args;
+    start() {
         this.captionsElement.style.visibility = "visible";
     }
 
@@ -21,7 +19,8 @@ export default class CaptionRender extends PIXI.Container implements IRender {
         this.captionsElement.style.visibility = "hidden";
     }
 
-    lineBegin(line:CaptionLine) {
+    //TODO: should be lineBegin(line:Timedline){, but current SpringRoll typings are wrong.
+    lineBegin(line:any) {
         this.captionsElement.innerHTML = line.content;
     }
 

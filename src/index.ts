@@ -28,3 +28,6 @@ const game = new TemplateGame({
         }
     }
 });
+
+//for accessing game from the console at runtime:
+(window as any).game = game;
