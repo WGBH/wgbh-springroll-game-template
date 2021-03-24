@@ -35,13 +35,13 @@
     <Property name="filename">Transition.svg</Property>
     <Property name="imagesPath">images</Property>
     <Property name="includeHiddenLayers">true</Property>
+    <Property name="optimizeForCH">false</Property>
     <Property name="version">0.1</Property>
   </PublishProperties>
   <PublishProperties id="8F6F8054-505F-472A-B602-F78CFC350563" name="PixiAnimate" enabled="true">
     <Property name="PublishSettings.IncludeInvisibleLayer">true</Property>
-    <Property name="PublishSettings.PixiJS.CommonJS">true</Property>
     <Property name="PublishSettings.PixiJS.CompactShapes">true</Property>
-    <Property name="PublishSettings.PixiJS.CompressJS">true</Property>
+    <Property name="PublishSettings.PixiJS.CompressJS">false</Property>
     <Property name="PublishSettings.PixiJS.HTML">false</Property>
     <Property name="PublishSettings.PixiJS.HTMLPath">Transition.html</Property>
     <Property name="PublishSettings.PixiJS.Images">true</Property>
@@ -51,6 +51,8 @@
     <Property name="PublishSettings.PixiJS.LoopTimeline">false</Property>
     <Property name="PublishSettings.PixiJS.Namespace">lib</Property>
     <Property name="PublishSettings.PixiJS.OutputFile">../src/assets/Transition.js</Property>
+    <Property name="PublishSettings.PixiJS.OutputFormat">cjs</Property>
+    <Property name="PublishSettings.PixiJS.OutputVersion">2.0</Property>
     <Property name="PublishSettings.PixiJS.Sounds">false</Property>
     <Property name="PublishSettings.PixiJS.SoundsPath">sounds/</Property>
     <Property name="PublishSettings.PixiJS.SpritesheetScale">1.0</Property>

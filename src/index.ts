@@ -14,7 +14,7 @@ const game = new TemplateGame({
     width:1624,
     height:750,
     altWidth:1000,
-    transition: Transition.stage,
+    transition: Transition,
     captions:{
         config:CONFIG.captions,
         display: new CaptionRender()

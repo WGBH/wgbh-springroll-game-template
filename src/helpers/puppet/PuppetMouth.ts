@@ -1,3 +1,4 @@
+import { MovieClip } from 'pixi-animate';
 
 /**
  * PuppetMouth controls a PIXI Animate MovieClip that contains frames for various mouth shapes
@@ -5,7 +6,7 @@
  */
 export class PuppetMouth {
 
-    mouth:PIXI.animate.MovieClip;
+    mouth:MovieClip;
     syncRhubarb:Array<RhubarbJSON> | RhubarbArray;
     update:Function;
 
@@ -13,7 +14,7 @@ export class PuppetMouth {
     _currentSoundInstance:PIXI.sound.IMediaInstance;
     _talking:boolean;
 
-    constructor (object:PIXI.animate.MovieClip) {
+    constructor (object:MovieClip) {
         this.mouth = object;
         this.rest();
     }

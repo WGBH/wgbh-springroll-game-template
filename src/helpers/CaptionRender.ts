@@ -1,8 +1,10 @@
+import { Container } from '@pixi/display';
+import { Text } from '@pixi/text';
 import {IRender} from 'springroll';
 
-export default class CaptionRender extends PIXI.Container implements IRender {
+export default class CaptionRender extends Container implements IRender {
 
-    public text:PIXI.Text;
+    public text:Text;
     public captionsElement:HTMLElement;
 
     constructor() {
