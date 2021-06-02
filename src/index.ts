@@ -1,9 +1,3 @@
-/// <reference types='pixi-sound' />
-/// <reference types='pixi-animate' />
-/// <reference types='springroll' />
-import 'pixi.js';
-import 'pixi-sound';
-import 'pixi-animate';
 import TemplateGame from './TemplateGame';
 import * as Transition from './assets/Transition';
 import { CONFIG } from './config/config';

@@ -4,6 +4,7 @@ import * as Puppet from '../helpers/puppet/PuppetMouth';
 import {CONFIG} from '../config/config';
 import { MovieClip } from 'pixi-animate';
 import { InteractionEvent } from '@pixi/interaction';
+import { IMediaInstance } from '@pixi/sound';
 
 export default class LipsyncScene extends Scene {
 
@@ -43,7 +44,7 @@ export default class LipsyncScene extends Scene {
 
     private lipsync = CONFIG.lipsync as Puppet.RhubarbConfig;
 
-    private current_soundinstance: PIXI.sound.IMediaInstance;
+    private current_soundinstance: IMediaInstance;
 
     preload():AssetList{
         return [
@@ -98,7 +99,7 @@ export default class LipsyncScene extends Scene {
     playPuppetExample = (mouthpuppet:Puppet.PuppetMouth, soundname: string) => {
 
         if(this.lipsync[soundname]) {
-            this.current_soundinstance = this.sound.play(soundname) as PIXI.sound.IMediaInstance;
+            this.current_soundinstance = this.sound.play(soundname) as IMediaInstance;
             mouthpuppet.lipSync(this.current_soundinstance, this.lipsync[soundname]);
         } else {
             console.warn("No lipsync for ", soundname);
