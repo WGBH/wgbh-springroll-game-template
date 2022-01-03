@@ -1,8 +1,8 @@
 const fs = require('fs');
 
-const configLocation = process.env.npm_package_configDirectory;
-console.log(process.env.npm_package_configDirectory);
-const outputLocation = ensureTrailingSlash(process.env.npm_package_configDirectory) + 'config.ts';
+const configLocation = process.env.npm_package_config_directory;
+console.log(configLocation);
+const outputLocation = ensureTrailingSlash(configLocation) + 'config.ts';
 
 
 var message = 'Concatenating config files...';
