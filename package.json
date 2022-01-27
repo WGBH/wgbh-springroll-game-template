@@ -13,9 +13,11 @@
     "config": "node tasks/concat-config.js",
     "quickcaptions": "node tasks/quick-captions.js && npm run config",
     "rhubarb": "node tasks/rhubarb-audio.js && npm run config",
-    "config:watch": "onchange 'src/config/*.json' -- npm run config"
+    "config:watch": "onchange 'src/config/*.json' -- npm run config",
+    "checkaudio": "node tasks/check-audio.js"
   },
   "config": {"directory": "src/config/"},
+  "audioDirectory": "static/sounds/",
   "captionconf": {
     "audioDirectory": "static/sounds/vo/",
     "audioListFile": "src/config/captions.txt",
