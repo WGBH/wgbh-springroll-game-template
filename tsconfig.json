@@ -3,9 +3,11 @@
       "esModuleInterop": true,
       "outDir": "./deploy/",
       "noImplicitAny": true,
-      "module": "commonjs",
+      "module": "ES2020",
+      "moduleResolution": "Node",
       "lib":["es2016", "dom"],
       "target": "es5",
-      "allowJs": true
+      "allowJs": true,
+      "downlevelIteration": true,
     }
   }
