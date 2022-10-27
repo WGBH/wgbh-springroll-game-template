@@ -50,14 +50,14 @@
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^7.0.0",
+    "onchange": "^6.1.1",
     "ts-loader": "^5.3.3",
     "tslint": "^5.15.0",
     "tslint-loader": "^3.5.4",
     "typescript": "^3.4.3",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.3.1",
-    "onchange": "^6.1.0"
+    "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
     "pixi-animate": "^1.3.5",
