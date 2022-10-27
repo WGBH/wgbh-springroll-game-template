@@ -1,9 +1,12 @@
 import { Scene, AssetList } from 'wgbh-springroll-game';
-import * as Art from '../assets/Lipsync';
+import * as ArtAsset from '../assets/Lipsync';
 import * as Puppet from '../helpers/puppet/PuppetMouth';
 import {CONFIG} from '../config/config';
+import { MovieClip } from 'pixi-animate';
+import { InteractionEvent } from '@pixi/interaction';
+import { IMediaInstance } from '@pixi/sound';
 
-export default class GameScene extends Scene {
+export default class LipsyncScene extends Scene {
 
     private art: Art;
 
@@ -41,11 +44,11 @@ export default class GameScene extends Scene {
 
     private lipsync = CONFIG.lipsync as Puppet.RhubarbConfig;
 
-    private current_soundinstance: PIXI.sound.IMediaInstance;
+    private current_soundinstance: IMediaInstance;
 
     preload():AssetList{
         return [
-            {type:'animate', id:'Art', stage:Art.stage, cacheInstance:true},
+            {type:'animate', id:'Art', asset:ArtAsset, cacheInstance:true},
             {type:'sound',id:'hello',path:'sounds/vo/hello.{ogg,mp3}',context:'vo'},
             {type:'sound',id:'bye',path:'sounds/vo/bye.{ogg,mp3}',context:'vo'}
         ];
@@ -62,20 +65,20 @@ export default class GameScene extends Scene {
 
         this.art.playBtn.buttonMode = true;
         this.art.playBtn.interactive = true;
-        this.art.playBtn.on('pointerup', (ev:PIXI.interaction.InteractionEvent) => {
+        this.art.playBtn.on('pointerup', (ev:InteractionEvent) => {
             this.stageManager.showCaption('hello');
             this.playPuppetExample(this.mouthpuppet, "hello");
         } );
 
         this.art.stopBtn.buttonMode = true;
         this.art.stopBtn.interactive = true;
-        this.art.stopBtn.on('pointerup', (ev:PIXI.interaction.InteractionEvent) => {
+        this.art.stopBtn.on('pointerup', (ev:InteractionEvent) => {
             this.stopPuppetExample(this.mouthpuppet);
         } );
 
         this.art.homeBtn.buttonMode = true;
         this.art.homeBtn.interactive = true;
-        this.art.homeBtn.on('pointerup', (ev:PIXI.interaction.InteractionEvent) => {  
+        this.art.homeBtn.on('pointerup', (ev:InteractionEvent) => {  
             this.stopPuppetExample(this.mouthpuppet);
             this.changeScene('game');
         } );
@@ -86,7 +89,9 @@ export default class GameScene extends Scene {
 
         // used to completely shut down the puppet, captions, etc
         console.log("stop the sound, lipsync, and captions");   
-        this.current_soundinstance.stop(); // hopefully that won't mess up the this.sound.vo 
+        if(this.current_soundinstance){
+            this.current_soundinstance.stop(); // hopefully that won't mess up the this.sound.vo
+        }
         mouthpuppet.stop();
         this.stageManager.stopCaption();
     }
@@ -94,7 +99,7 @@ export default class GameScene extends Scene {
     playPuppetExample = (mouthpuppet:Puppet.PuppetMouth, soundname: string) => {
 
         if(this.lipsync[soundname]) {
-            this.current_soundinstance = this.sound.play(soundname) as PIXI.sound.IMediaInstance;
+            this.current_soundinstance = this.sound.play(soundname) as IMediaInstance;
             mouthpuppet.lipSync(this.current_soundinstance, this.lipsync[soundname]);
         } else {
             console.warn("No lipsync for ", soundname);
@@ -106,9 +111,9 @@ export default class GameScene extends Scene {
     }
 }
 
-interface Art extends PIXI.animate.MovieClip {
-    mouth: PIXI.animate.MovieClip;
-    playBtn: PIXI.animate.MovieClip;
-    stopBtn: PIXI.animate.MovieClip;
-    homeBtn: PIXI.animate.MovieClip;
+interface Art extends MovieClip {
+    mouth: MovieClip;
+    playBtn: MovieClip;
+    stopBtn: MovieClip;
+    homeBtn: MovieClip;
 }

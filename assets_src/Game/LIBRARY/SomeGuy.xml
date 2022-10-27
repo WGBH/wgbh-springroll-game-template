@@ -52,7 +52,7 @@
                 </DOMSymbolInstance>
               </elements>
             </DOMFrame>
-            <DOMFrame index="57" keyMode="15872">
+            <DOMFrame index="57" keyMode="9728">
               <elements>
                 <DOMSymbolInstance libraryItemName="Eyes" symbolType="graphic" loop="loop">
                   <matrix>
@@ -64,7 +64,7 @@
                 </DOMSymbolInstance>
               </elements>
             </DOMFrame>
-            <DOMFrame index="58" keyMode="15872">
+            <DOMFrame index="58" keyMode="9728">
               <elements>
                 <DOMSymbolInstance libraryItemName="Eyes" selected="true" symbolType="graphic" loop="loop">
                   <matrix>

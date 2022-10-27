@@ -1,3 +1,5 @@
+import { IMediaInstance } from '@pixi/sound';
+import { MovieClip } from 'pixi-animate';
 
 /**
  * PuppetMouth controls a PIXI Animate MovieClip that contains frames for various mouth shapes
@@ -5,15 +7,15 @@
  */
 export class PuppetMouth {
 
-    mouth:PIXI.animate.MovieClip;
+    mouth:MovieClip;
     syncRhubarb:Array<RhubarbJSON> | RhubarbArray;
     update:Function;
 
     _currentDuration:number;
-    _currentSoundInstance:PIXI.sound.IMediaInstance;
+    _currentSoundInstance:IMediaInstance;
     _talking:boolean;
 
-    constructor (object:PIXI.animate.MovieClip) {
+    constructor (object:MovieClip) {
         this.mouth = object;
         this.rest();
     }
@@ -97,11 +99,11 @@ export class PuppetMouth {
         return "X";
     }
 
-    lipSync(sound:PIXI.sound.IMediaInstance,syncinfo:RhubarbArray) {
+    lipSync(sound:IMediaInstance,syncinfo:RhubarbArray) {
         this.setSyncArray(syncinfo);
         this._currentSoundInstance = sound;
-        this._currentSoundInstance.off("progress",this.updateMouth);
-        this._currentSoundInstance.on("progress",this.updateMouth);
+        this._currentSoundInstance.off("progress", this.updateMouth);
+        this._currentSoundInstance.on("progress", this.updateMouth);
         this._talking = true;
       }
 
@@ -110,7 +112,7 @@ export class PuppetMouth {
             this.update(progress);
             if(progress >= 1) {
               this._talking = false;
-              this._currentSoundInstance.off("progress",this.updateMouth);
+              this._currentSoundInstance.off("progress", this.updateMouth);
             }
         }
       }

@@ -31,7 +31,7 @@
             </DOMFrame>
             <DOMFrame index="6" duration="13" tweenType="motion" motionTweenSnap="true" keyMode="22017">
               <elements>
-                <DOMSymbolInstance libraryItemName="SomeGuy" selected="true" symbolType="graphic" loop="single frame">
+                <DOMSymbolInstance libraryItemName="SomeGuy" symbolType="graphic" loop="single frame">
                   <matrix>
                     <Matrix tx="-3.05" ty="16.35"/>
                   </matrix>

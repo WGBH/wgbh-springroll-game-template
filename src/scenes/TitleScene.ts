@@ -1,8 +1,11 @@
-import { Scene, AssetList, Tween } from 'wgbh-springroll-game';
+import { Graphics } from '@pixi/graphics';
+import { Sprite } from '@pixi/sprite';
+import { Text } from '@pixi/text';
+import { Scene, AssetList, Tween, Game } from 'wgbh-springroll-game';
 
 export default class TitleScene extends Scene {
 
-    private logo:PIXI.Sprite;
+    private logo:Sprite;
 
     preload():AssetList{
         return [
@@ -11,18 +14,18 @@ export default class TitleScene extends Scene {
     }
 
     setup(){
-        const background = new PIXI.Graphics();
+        const background = new Graphics();
         background.beginFill(0xDDDDDD);
         background.drawRect(0, 0, 1624, 750);
         background.endFill();
         this.addChild(background);
-        const title = new PIXI.Text('Game Template', {align: 'center', fontSize: 72, fontFamily: 'Arial'});
+        const title = new Text('Game Template', {align: 'center', fontSize: 72, fontFamily: 'Arial'});
         title.x = 1624/2;
         title.y = 750/2;
         title.anchor.x = 0.5;
         title.anchor.y = 0.5;
         this.addChild(title);
-        this.logo = new PIXI.Sprite(this.cache.images.logo);
+        this.logo = new Sprite(this.cache.images.logo);
         this.logo.y = -this.logo.height;
         this.resize();
         this.addChild(this.logo);
