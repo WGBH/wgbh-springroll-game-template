@@ -2,7 +2,7 @@ import { Scene, AssetList } from 'wgbh-springroll-game';
 import * as ArtAsset from '../assets/Lipsync';
 import * as Puppet from '../helpers/puppet/PuppetMouth';
 import {CONFIG} from '../config/config';
-import { MovieClip } from 'pixi-animate';
+import { MovieClip } from '@pixi/animate';
 import { InteractionEvent } from '@pixi/interaction';
 import { IMediaInstance } from '@pixi/sound';
 

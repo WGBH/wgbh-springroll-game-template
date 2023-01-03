@@ -1,5 +1,5 @@
 import { IMediaInstance } from '@pixi/sound';
-import { MovieClip } from 'pixi-animate';
+import { MovieClip } from '@pixi/animate';
 
 /**
  * PuppetMouth controls a PIXI Animate MovieClip that contains frames for various mouth shapes
