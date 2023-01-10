@@ -1,9 +1,9 @@
 const fs = require('fs');
 
-let audioDirectory = process.env.npm_package_rhubarbconf_audioDirectory;
-const runrhubarb = process.env.npm_package_rhubarbconf_rhubarbBinary;
-const audioList = process.env.npm_package_rhubarbconf_audioListFile;
-const outputLocation = ensureTrailingSlash(process.env.npm_package_rhubarbconf_outputDirectory) + "lipsync.json";
+let audioDirectory = process.env.npm_package_config_rhubarbconf_audioDirectory;
+const runrhubarb = process.env.npm_package_config_rhubarbconf_rhubarbBinary;
+const audioList = process.env.npm_package_config_rhubarbconf_audioListFile;
+const outputLocation = ensureTrailingSlash(process.env.npm_package_config_rhubarbconf_outputDirectory) + "lipsync.json";
 let audiofilelist;
 let output = "{";
 

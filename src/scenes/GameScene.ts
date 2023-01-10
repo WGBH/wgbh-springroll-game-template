@@ -1,3 +1,4 @@
+import { Animator, MovieClip } from '@pixi/animate';
 import { Scene, AssetList, PauseableTimer } from 'wgbh-springroll-game';
 import * as GameArt from '../assets/Game';
 
@@ -11,7 +12,7 @@ export default class GameScene extends Scene {
 
     preload():AssetList{
         return [
-            {type:'animate', id:'gameArt', stage:GameArt.stage, cacheInstance:true},
+            {type:'animate', id:'gameArt', asset:GameArt, cacheInstance:true},
             {type:'sound', id:'tvOn', path:'sounds/on.{ogg,mp3}',context:'sfx'},
             {type:'sound', id:'tvOff', path:'sounds/off.{ogg,mp3}', volume:0.3,context:'sfx'},
             {type:'sound',id:'hello',path:'sounds/vo/hello.{ogg,mp3}',context:'vo'},
@@ -62,13 +63,13 @@ export default class GameScene extends Scene {
             this.clearInterval(this.counter);
             this.art.screen.interactive = false;
             this.sound.play('tvOff');
-            PIXI.animate.Animator.play(this.art.screen, 'turnOff', this.enableRemote);
+            Animator.play(this.art.screen, 'turnOff', this.enableRemote);
             this.sound.play('bye');
             this.stageManager.showCaption('bye');            
         }
         else{
             this.sound.play('tvOn');
-            PIXI.animate.Animator.play(this.art.screen, 'turnOn', this.watchTV);
+            Animator.play(this.art.screen, 'turnOn', this.watchTV);
             this.sound.play('hello');
             this.stageManager.showCaption('hello');
         }
@@ -78,7 +79,7 @@ export default class GameScene extends Scene {
     watchTV = ()=>{
         this.enableRemote();
         this.art.screen.interactive = true;
-        PIXI.animate.Animator.play(this.art.screen, 'watchTV');
+        Animator.play(this.art.screen, 'watchTV');
         this.counter = this.setInterval(this.countTime, 1000);
     }
 
@@ -103,10 +104,10 @@ export default class GameScene extends Scene {
     }
 }
 
-interface Art extends PIXI.animate.MovieClip {
-    remote: PIXI.animate.MovieClip & {
-        button: PIXI.animate.MovieClip;
+interface Art extends MovieClip {
+    remote: MovieClip & {
+        button: MovieClip;
     };
-    screen: PIXI.animate.MovieClip;
-    lipsyncScene: PIXI.animate.MovieClip;
+    screen: MovieClip;
+    lipsyncScene: MovieClip;
 }

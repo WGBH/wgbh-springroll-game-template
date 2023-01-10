@@ -1,1 +1,472 @@
-!function(Y,a){var n=Y.animate.MovieClip,i=Y.Container,t=Y.Graphics,e=Y.animate.ShapesCache;a.Background=i.e(function(){i.call(this);var Y=(new t).d(e.Transition[0]).t(-94.05,-82.05);this.ac(Y)}),a.g=i.e(function(){i.call(this);var Y=(new t).d(e.Transition[1]);this.ac(Y)}),a.n=i.e(function(){i.call(this);var Y=(new t).d(e.Transition[2]);this.ac(Y)}),a.i=i.e(function(){i.call(this);var Y=(new t).d(e.Transition[3]);this.ac(Y)}),a.d=i.e(function(){i.call(this);var Y=(new t).d(e.Transition[4]);this.ac(Y)}),a.a=i.e(function(){i.call(this);var Y=(new t).d(e.Transition[5]);this.ac(Y)}),a.o=i.e(function(){i.call(this);var Y=(new t).d(e.Transition[6]);this.ac(Y)}),a.L=i.e(function(){i.call(this);var Y=(new t).d(e.Transition[7]);this.ac(Y)});var s=n.e(function(Y){n.call(this,Y,51,!1);var i=new a.L,t=new a.o,e=new a.a,s=new a.d,o=new a.i,r=new a.n,c=new a.g;this.at(i,0,51,"0X-88.85Y-4.15 8Y-5.4 9Y-6.65 10Y-7.9 11Y-9.15 12Y-8.45 13Y-7.7 14Y-7 15Y-6.3 16Y-5.6 17Y-4.85 18Y-4.15").at(t,0,51,"0X-56.75Y1.75 11Y0.5 12Y-0.75 13Y-2 14Y-3.25 15Y-2.55 16Y-1.8 17Y-1.1 18Y-0.4 19Y0.3 20Y1.05 21Y1.75").at(e,0,51,"0X-23.5Y1.75 14Y0.5 15Y-0.75 16Y-2 17Y-3.25 18Y-2.55 19Y-1.8 20Y-1.1 21Y-0.4 22Y0.3 23Y1.05 24Y1.75").at(s,0,51,"0X8.9Y-3.8 17Y-5.05 18Y-6.3 19Y-7.55 20Y-8.8 21Y-8.1 22Y-7.35 23Y-6.65 24Y-5.95 25Y-5.25 26Y-4.5 27Y-3.8").at(o,0,51,"0X33.3Y-4.15 20Y-5.4 21Y-6.65 22Y-7.9 23Y-9.15 24Y-8.45 25Y-7.7 26Y-7 27Y-6.3 28Y-5.6 29Y-4.85 30Y-4.15").at(r,0,51,"0X56.6Y1.4 23Y0.15 24Y-1.1 25Y-2.35 26Y-3.6 27Y-2.9 28Y-2.15 29Y-1.45 30Y-0.75 31Y-0.05 32Y0.7 33Y1.4").at(c,0,51,"0X89Y7.7 26Y6.45 27Y5.2 28Y3.95 29Y2.7 30Y3.4 31Y4.15 32Y4.85 33Y5.55 34Y6.25 35Y7 36Y7.7")});(a.Transition=n.e(function(){n.call(this,0,67,!1,30,{cover:0,cover_stop:14,load:15,load_loop:51,reveal:52,reveal_stop:66});var Y=new a.Background,i=new s(2);this.at(Y,0,67,"0Y-768 1Y-713.15 2Y-658.3 3Y-603.45 4Y-548.55 5Y-493.7 6Y-438.85 7Y-384 8Y-329.15 9Y-274.3 10Y-219.45 11Y-164.55 12Y-109.7 13Y-54.85 14Y0 53Y-54.85 54Y-109.7 55Y-164.55 56Y-219.45 57Y-274.3 58Y-329.15 59Y-384 60Y-438.85 61Y-493.7 62Y-548.55 63Y-603.45 64Y-658.3 65Y-713.15 66Y-768").at(i,8,51,"8X808Y372L0 9L0.17 10L0.33 11L0.5 12L0.67 13L0.83 14L1 53L0.83 54L0.67 55L0.5 56L0.33 57L0.17 58L0")})).assets={Transition:"images/Transition.shapes.txt"}}(PIXI,lib=lib||{});var lib;"undefined"!=typeof module&&module.exports&&(module.exports={stage:lib.Transition,background:16777215,width:1624,height:750,framerate:30,totalFrames:67,library:lib});
+const data = {
+    version: 2,
+    stage: null,
+    background: 0xffffff,
+    width: 1624,
+    height: 750,
+    framerate: 30,
+    totalFrames: 67,
+    assets: {
+        "Transition": "images/Transition.shapes.txt"
+    },
+    lib: {},
+    shapes: {},
+    textures: {},
+    spritesheets: [],
+    getTexture: function (id) {
+        if (data.textures[id]) {
+            return data.textures[id];
+        }
+        const atlas = data.spritesheets.find(atlas => !!atlas.textures[id]);
+        return atlas ? atlas.textures[id] : null;
+    },
+    setup: function (animate) {
+        const MovieClip = animate.MovieClip;
+        const Container = animate.Container;
+        const Graphics = animate.Graphics;
+
+
+        data.lib.Background = class extends Container {
+            constructor() {
+                super();
+                const instance1 = new Graphics()
+                    .drawCommands(data.shapes.Transition[0])
+                    .setTransform(-94.05, -82.05);
+                this.addChild(instance1);
+            }
+        };
+
+        data.lib.g = class extends Container {
+            constructor() {
+                super();
+                const instance1 = new Graphics()
+                    .drawCommands(data.shapes.Transition[1]);
+                this.addChild(instance1);
+            }
+        };
+
+        data.lib.n = class extends Container {
+            constructor() {
+                super();
+                const instance1 = new Graphics()
+                    .drawCommands(data.shapes.Transition[2]);
+                this.addChild(instance1);
+            }
+        };
+
+        data.lib.i = class extends Container {
+            constructor() {
+                super();
+                const instance1 = new Graphics()
+                    .drawCommands(data.shapes.Transition[3]);
+                this.addChild(instance1);
+            }
+        };
+
+        data.lib.d = class extends Container {
+            constructor() {
+                super();
+                const instance1 = new Graphics()
+                    .drawCommands(data.shapes.Transition[4]);
+                this.addChild(instance1);
+            }
+        };
+
+        data.lib.a = class extends Container {
+            constructor() {
+                super();
+                const instance1 = new Graphics()
+                    .drawCommands(data.shapes.Transition[5]);
+                this.addChild(instance1);
+            }
+        };
+
+        data.lib.o = class extends Container {
+            constructor() {
+                super();
+                const instance1 = new Graphics()
+                    .drawCommands(data.shapes.Transition[6]);
+                this.addChild(instance1);
+            }
+        };
+
+        data.lib.L = class extends Container {
+            constructor() {
+                super();
+                const instance1 = new Graphics()
+                    .drawCommands(data.shapes.Transition[7]);
+                this.addChild(instance1);
+            }
+        };
+
+        const Graphic1 = class extends MovieClip {
+            constructor(mode) {
+                super({ mode: mode, duration: 51, loop: false });
+                const instance7 = new data.lib.L();
+                const instance6 = new data.lib.o();
+                const instance5 = new data.lib.a();
+                const instance4 = new data.lib.d();
+                const instance3 = new data.lib.i();
+                const instance2 = new data.lib.n();
+                const instance1 = new data.lib.g();
+                this.addTimedChild(instance7, 0, 51, {
+                        "0": {
+                            x: -88.85,
+                            y: -4.15
+                        },
+                        "8": {
+                            y: -5.4
+                        },
+                        "9": {
+                            y: -6.65
+                        },
+                        "10": {
+                            y: -7.9
+                        },
+                        "11": {
+                            y: -9.15
+                        },
+                        "12": {
+                            y: -8.45
+                        },
+                        "13": {
+                            y: -7.7
+                        },
+                        "14": {
+                            y: -7
+                        },
+                        "15": {
+                            y: -6.3
+                        },
+                        "16": {
+                            y: -5.6
+                        },
+                        "17": {
+                            y: -4.85
+                        },
+                        "18": {
+                            y: -4.15
+                        }
+                    })
+                    .addTimedChild(instance6, 0, 51, {
+                        "0": {
+                            x: -56.75,
+                            y: 1.75
+                        },
+                        "11": {
+                            y: 0.5
+                        },
+                        "12": {
+                            y: -0.75
+                        },
+                        "13": {
+                            y: -2
+                        },
+                        "14": {
+                            y: -3.25
+                        },
+                        "15": {
+                            y: -2.55
+                        },
+                        "16": {
+                            y: -1.8
+                        },
+                        "17": {
+                            y: -1.1
+                        },
+                        "18": {
+                            y: -0.4
+                        },
+                        "19": {
+                            y: 0.3
+                        },
+                        "20": {
+                            y: 1.05
+                        },
+                        "21": {
+                            y: 1.75
+                        }
+                    })
+                    .addTimedChild(instance5, 0, 51, {
+                        "0": {
+                            x: -23.5,
+                            y: 1.75
+                        },
+                        "14": {
+                            y: 0.5
+                        },
+                        "15": {
+                            y: -0.75
+                        },
+                        "16": {
+                            y: -2
+                        },
+                        "17": {
+                            y: -3.25
+                        },
+                        "18": {
+                            y: -2.55
+                        },
+                        "19": {
+                            y: -1.8
+                        },
+                        "20": {
+                            y: -1.1
+                        },
+                        "21": {
+                            y: -0.4
+                        },
+                        "22": {
+                            y: 0.3
+                        },
+                        "23": {
+                            y: 1.05
+                        },
+                        "24": {
+                            y: 1.75
+                        }
+                    })
+                    .addTimedChild(instance4, 0, 51, {
+                        "0": {
+                            x: 8.9,
+                            y: -3.8
+                        },
+                        "17": {
+                            y: -5.05
+                        },
+                        "18": {
+                            y: -6.3
+                        },
+                        "19": {
+                            y: -7.55
+                        },
+                        "20": {
+                            y: -8.8
+                        },
+                        "21": {
+                            y: -8.1
+                        },
+                        "22": {
+                            y: -7.35
+                        },
+                        "23": {
+                            y: -6.65
+                        },
+                        "24": {
+                            y: -5.95
+                        },
+                        "25": {
+                            y: -5.25
+                        },
+                        "26": {
+                            y: -4.5
+                        },
+                        "27": {
+                            y: -3.8
+                        }
+                    })
+                    .addTimedChild(instance3, 0, 51, {
+                        "0": {
+                            x: 33.3,
+                            y: -4.15
+                        },
+                        "20": {
+                            y: -5.4
+                        },
+                        "21": {
+                            y: -6.65
+                        },
+                        "22": {
+                            y: -7.9
+                        },
+                        "23": {
+                            y: -9.15
+                        },
+                        "24": {
+                            y: -8.45
+                        },
+                        "25": {
+                            y: -7.7
+                        },
+                        "26": {
+                            y: -7
+                        },
+                        "27": {
+                            y: -6.3
+                        },
+                        "28": {
+                            y: -5.6
+                        },
+                        "29": {
+                            y: -4.85
+                        },
+                        "30": {
+                            y: -4.15
+                        }
+                    })
+                    .addTimedChild(instance2, 0, 51, {
+                        "0": {
+                            x: 56.6,
+                            y: 1.4
+                        },
+                        "23": {
+                            y: 0.15
+                        },
+                        "24": {
+                            y: -1.1
+                        },
+                        "25": {
+                            y: -2.35
+                        },
+                        "26": {
+                            y: -3.6
+                        },
+                        "27": {
+                            y: -2.9
+                        },
+                        "28": {
+                            y: -2.15
+                        },
+                        "29": {
+                            y: -1.45
+                        },
+                        "30": {
+                            y: -0.75
+                        },
+                        "31": {
+                            y: -0.05
+                        },
+                        "32": {
+                            y: 0.7
+                        },
+                        "33": {
+                            y: 1.4
+                        }
+                    })
+                    .addTimedChild(instance1, 0, 51, {
+                        "0": {
+                            x: 89,
+                            y: 7.7
+                        },
+                        "26": {
+                            y: 6.45
+                        },
+                        "27": {
+                            y: 5.2
+                        },
+                        "28": {
+                            y: 3.95
+                        },
+                        "29": {
+                            y: 2.7
+                        },
+                        "30": {
+                            y: 3.4
+                        },
+                        "31": {
+                            y: 4.15
+                        },
+                        "32": {
+                            y: 4.85
+                        },
+                        "33": {
+                            y: 5.55
+                        },
+                        "34": {
+                            y: 6.25
+                        },
+                        "35": {
+                            y: 7
+                        },
+                        "36": {
+                            y: 7.7
+                        }
+                    });
+            }
+        };
+
+        data.lib.Transition = class extends MovieClip {
+            constructor() {
+                super({
+                    duration: 67,
+                    framerate: 30,
+                    loop: false,
+                    labels: {
+                        cover: 0,
+                        cover_stop: 14,
+                        load: 15,
+                        load_loop: 51,
+                        reveal: 52,
+                        reveal_stop: 66
+                    }
+                });
+                const instance1 = new data.lib.Background();
+                const instance2 = new Graphic1(MovieClip.SYNCHED);
+                this.addTimedChild(instance1, 0, 67, {
+                        "0": {
+                            y: -768,
+                            tw: {
+                                d: 14,
+                                p: {
+                                    y: 0
+                                }
+                            }
+                        },
+                        "52": {
+                            tw: {
+                                d: 14,
+                                p: {
+                                    y: -768
+                                }
+                            }
+                        }
+                    })
+                    .addTimedChild(instance2, 8, 51, {
+                        "8": {
+                            x: 808,
+                            y: 372,
+                            a: 0
+                        },
+                        "9": {
+                            a: 0.17
+                        },
+                        "10": {
+                            a: 0.33
+                        },
+                        "11": {
+                            a: 0.5
+                        },
+                        "12": {
+                            a: 0.67
+                        },
+                        "13": {
+                            a: 0.83
+                        },
+                        "14": {
+                            a: 1
+                        },
+                        "53": {
+                            a: 0.83
+                        },
+                        "54": {
+                            a: 0.67
+                        },
+                        "55": {
+                            a: 0.5
+                        },
+                        "56": {
+                            a: 0.33
+                        },
+                        "57": {
+                            a: 0.17
+                        },
+                        "58": {
+                            a: 0
+                        }
+                    });
+            }
+        };
+        data.stage = data.lib.Transition;
+    }
+};
+module.exports = data;

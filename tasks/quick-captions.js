@@ -1,8 +1,10 @@
 const fs = require('fs');
 
-let audioDirectory = process.env.npm_package_captionconf_audioDirectory;
-const audioList = process.env.npm_package_captionconf_audioListFile; // this is a simple TSV list of audio files and their associated lines
-const outputLocation = process.env.npm_package_captionconf_outputDirectory + "captions.json";
+let audioDirectory = process.env.npm_package_config_captionconf_audioDirectory;
+console.log('audioD', audioDirectory);
+console.log(process.env);
+const audioList = process.env.npm_package_config_captionconf_audioListFile; // this is a simple TSV list of audio files and their associated lines
+const outputLocation = process.env.npm_package_config_captionconf_outputDirectory + "captions.json";
 
 let afinfo = "afinfo";
 
