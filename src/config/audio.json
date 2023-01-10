@@ -1,0 +1,10 @@
+{
+  "vo": {
+    "greet":"hello",
+    "bye":"bye"
+  },
+  "sfx":{
+    "off":"off",
+    "on":"on"
+  }
+}

@@ -13,11 +13,14 @@
     "config": "node tasks/concat-config.js",
     "quickcaptions": "node tasks/quick-captions.js && npm run config",
     "rhubarb": "node tasks/rhubarb-audio.js && npm run config",
-    "config:watch": "onchange 'src/config/*.json' -- npm run config"
+    "config:watch": "onchange 'src/config/*.json' -- npm run config",
+    "checkaudio": "node tasks/check-audio.js",
+    "crushimages": "node tasks/minimize-images.js"
   },
   "config": {
     "directory": "src/config/"
   },
+  "audioDirectory": "static/sounds/",
   "captionconf": {
     "audioDirectory": "static/sounds/vo/",
     "audioListFile": "src/config/captions.txt",
@@ -42,6 +45,10 @@
     "babel-loader": "^8.3.0",
     "copy-webpack-plugin": "^11.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "imagemin": "^6.1.0",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^7.0.0",
     "onchange": "^7.1.0",
     "ts-loader": "^9.4.2",
     "tslint": "^6.1.3",
