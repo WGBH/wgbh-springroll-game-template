@@ -18,19 +18,19 @@
     "crushimages": "node tasks/minimize-images.js"
   },
   "config": {
-    "directory": "src/config/"
-  },
-  "audioDirectory": "static/sounds/",
-  "captionconf": {
-    "audioDirectory": "static/sounds/vo/",
-    "audioListFile": "src/config/captions.txt",
-    "outputDirectory": "src/config/"
-  },
-  "rhubarbconf": {
-    "audioDirectory": "static/sounds/vo",
-    "audioListFile": "src/config/captions.txt",
-    "outputDirectory": "src/config/",
-    "rhubarbBinary": "/Applications/rhubarb-lip-sync-1.10.0-osx/rhubarb"
+    "directory": "src/config/",
+    "audioDirectory": "static/sounds/",
+    "captionconf": {
+      "audioDirectory": "static/sounds/vo/",
+      "audioListFile": "src/config/captions.txt",
+      "outputDirectory": "src/config/"
+    },
+    "rhubarbconf": {
+      "audioDirectory": "static/sounds/vo",
+      "audioListFile": "src/config/captions.txt",
+      "outputDirectory": "src/config/",
+      "rhubarbBinary": "/Applications/rhubarb-lip-sync-1.10.0-osx/rhubarb"
+    }
   },
   "repository": {
     "type": "git",

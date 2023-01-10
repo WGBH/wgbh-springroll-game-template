@@ -1,5 +1,5 @@
 const fs = require('fs');
-let audioDirectory = process.env.npm_package_audioDirectory;
+let audioDirectory = process.env.npm_package_config_audioDirectory;
 if (!audioDirectory) {
   console.log("no audio directory");
   return;
@@ -15,7 +15,7 @@ if (!process.env.npm_package_config_directory) {
 }
 const configLocation = ensureTrailingSlash(process.env.npm_package_config_directory);
 const outputLocation = configLocation + "captions.json";
-let maxChars = process.env.npm_package_captionconf_maxChars ? process.env.npm_package_captionconf_maxChars : 80;
+let maxChars = process.env.npm_package_config_captionconf_maxChars ? process.env.npm_package_config_captionconf_maxChars : 80;
 const syncfile = configLocation + "lipsync.json";
 const dialogfile = configLocation + "dialog.json";
 const audiofile = configLocation + "audio.json";
