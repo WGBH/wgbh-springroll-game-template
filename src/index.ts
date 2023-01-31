@@ -15,9 +15,14 @@ const game = new TemplateGame({
     },
     springRollConfig: {
         features: {
+            sound:true,
+            soundVolume:true,
             vo:true,
+            voVolume:true,
             sfx:true,
+            sfxVolume:true,
             music:true,
+            musicVolume:true,
             captions:true
         }
     }
