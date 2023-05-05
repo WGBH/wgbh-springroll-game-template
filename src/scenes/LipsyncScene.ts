@@ -1,14 +1,13 @@
 import { Scene, AssetList } from 'wgbh-springroll-game';
 import * as ArtAsset from '../assets/Lipsync';
 import * as Puppet from '../helpers/puppet/PuppetMouth';
-import {CONFIG} from '../config/config';
+import { CONFIG } from '../config/config';
 import { MovieClip } from '@pixi/animate';
 import { InteractionEvent } from '@pixi/interaction';
 import { IMediaInstance } from '@pixi/sound';
+import BaseScene from './BaseScene';
 
-export default class LipsyncScene extends Scene {
-
-    private art: Art;
+export default class LipsyncScene extends BaseScene {
 
     /* README FOR SET-UP
 
@@ -40,73 +39,61 @@ export default class LipsyncScene extends Scene {
         note that running the rhubarb will replace existing entries and add new entries (it will not delete existing entries, same for the captions). If you want to delete the contents of lipsync.json then do it manually.
     */
 
-    private mouthpuppet:Puppet.PuppetMouth;
+    /*private mouthpuppet: Puppet.PuppetMouth;
 
     private lipsync = CONFIG.lipsync as Puppet.RhubarbConfig;
 
-    private current_soundinstance: IMediaInstance;
+    private current_soundinstance: IMediaInstance;*/
 
-    preload():AssetList{
+    voArr: string[] = ["hello", "bye"];
+
+    preload(): AssetList {
         return [
-            {type:'animate', id:'Art', asset:ArtAsset, cacheInstance:true},
-            {type:'sound',id:'hello',path:'sounds/vo/hello.{ogg,mp3}',context:'vo'},
-            {type:'sound',id:'bye',path:'sounds/vo/bye.{ogg,mp3}',context:'vo'}
+            { type: 'animate', id: 'Art', asset: ArtAsset, cacheInstance: true },
+            { type: 'sound', id: 'hello', path: 'sounds/vo/hello.{ogg,mp3}', context: 'vo' },
+            { type: 'sound', id: 'bye', path: 'sounds/vo/bye.{ogg,mp3}', context: 'vo' }
         ];
     }
 
-    setup(){
+    setup() {
         this.art = this.cache.animations.Art as Art;
         this.addChild(this.art);
-        this.mouthpuppet = new Puppet.PuppetMouth(this.art.mouth);
-        this.mouthpuppet.rest();
+        this.lipsyncMouth = new Puppet.PuppetMouth(this.art.mouth);
+        this.lipsyncMouth.rest();
     }
 
-    start(){
+    start() {
 
         this.art.playBtn.buttonMode = true;
         this.art.playBtn.interactive = true;
-        this.art.playBtn.on('pointerup', (ev:InteractionEvent) => {
+        this.art.playBtn.on('pointerup', (ev: InteractionEvent) => {
             this.stageManager.showCaption('hello');
-            this.playPuppetExample(this.mouthpuppet, "hello");
-        } );
+            this.playPuppetExample(this.lipsyncMouth, "hello");
+        });
 
         this.art.stopBtn.buttonMode = true;
         this.art.stopBtn.interactive = true;
-        this.art.stopBtn.on('pointerup', (ev:InteractionEvent) => {
-            this.stopPuppetExample(this.mouthpuppet);
-        } );
+        this.art.stopBtn.on('pointerup', (ev: InteractionEvent) => {
+            this.stopVO();
+        });
 
         this.art.homeBtn.buttonMode = true;
         this.art.homeBtn.interactive = true;
-        this.art.homeBtn.on('pointerup', (ev:InteractionEvent) => {  
-            this.stopPuppetExample(this.mouthpuppet);
+        this.art.homeBtn.on('pointerup', (ev: InteractionEvent) => {
+            this.stopVO();
             this.changeScene('game');
-        } );
+        });
 
     }
 
-    stopPuppetExample = (mouthpuppet:Puppet.PuppetMouth) => {
 
-        // used to completely shut down the puppet, captions, etc
-        console.log("stop the sound, lipsync, and captions");   
-        if(this.current_soundinstance){
-            this.current_soundinstance.stop(); // hopefully that won't mess up the this.sound.vo
-        }
-        mouthpuppet.stop();
-        this.stageManager.stopCaption();
-    }
 
-    playPuppetExample = (mouthpuppet:Puppet.PuppetMouth, soundname: string) => {
+    playPuppetExample = (mouthpuppet: Puppet.PuppetMouth, soundname: string) => {
+        this.lipsyncMouth = mouthpuppet;
+        this.playVO(this.voArr, null, true);
+    };
 
-        if(this.lipsync[soundname]) {
-            this.current_soundinstance = this.sound.play(soundname) as IMediaInstance;
-            mouthpuppet.lipSync(this.current_soundinstance, this.lipsync[soundname]);
-        } else {
-            console.warn("No lipsync for ", soundname);
-        }
-    }
-
-    cleanup(){    
+    cleanup() {
         // emtpy
     }
 }

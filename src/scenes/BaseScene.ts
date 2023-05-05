@@ -57,8 +57,10 @@ export default class BaseScene extends Scene {
          }
          else {
             this.playVO(alias[0], () => {
-               (alias as string[]).splice(0, 1);
-               this.playVO(alias, cb);
+               // copy array
+               let arr = [...alias];
+               arr.splice(0, 1);
+               this.playVO(arr, cb);
             });
             return;
          }
