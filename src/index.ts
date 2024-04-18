@@ -2,6 +2,7 @@ import TemplateGame from './TemplateGame';
 import * as Transition from './assets/Transition';
 import { CONFIG } from './config/config';
 import CaptionRender from './helpers/CaptionRender';
+import Patches from './helpers/Patches';
 
 const game = new TemplateGame({
     containerID: 'content',
@@ -30,3 +31,6 @@ const game = new TemplateGame({
 
 //for accessing game from the console at runtime:
 (window as any).game = game;
+
+//Enable all patches to external library bugs, etc.
+Patches.enableAll(game);

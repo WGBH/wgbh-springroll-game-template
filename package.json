@@ -60,7 +60,7 @@
   },
   "dependencies": {
     "@pixi/animate": "^2.0.5",
-    "@pixi/sound": "^4.3.1",
+    "@pixi/sound": "^4.4.1",
     "pixi.js": "^6.5.8",
     "springroll": "^2.4.4",
     "wgbh-springroll-game": "^2.0.0"
