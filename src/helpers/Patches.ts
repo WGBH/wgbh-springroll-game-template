@@ -36,20 +36,20 @@ export default class Patches{
 		const context = sound.context.audioContext;
 		game.app.state.pause.subscribe((pause) => {
 			if (!pause) {
-				if ((context.state === 'suspended' || (context.state as string) === 'interrupted')) {
+				if (context.state === 'suspended' || (context.state as string) === 'interrupted' || (context.state as string) === 'suspending') {
 					context.resume();
 				}
 			}
 		});
 
 		context.onstatechange = () => {
-			if ((context.state === 'suspended' || (context.state as string) === 'interrupted') && document.hasFocus() && !game.app.state.pause.value) {
+			if ((context.state === 'suspended' || (context.state as string) === 'interrupted' || (context.state as string) === 'suspending') && document.hasFocus() && !game.app.state.pause.value) {
 				context.resume();
 			}
 		};
 
 		window.addEventListener('focus', () => {
-			if ((context.state === 'suspended' || (context.state as string) === 'interrupted') && !game.app.state.pause.value) {
+			if ((context.state === 'suspended' || (context.state as string) === 'interrupted' || (context.state as string) === 'suspending') && !game.app.state.pause.value) {
 				context.resume();
 			}
 		});
