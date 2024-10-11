@@ -33,26 +33,35 @@ export default class Patches{
      * @param game instance of Game
      */
     static pixiSoundiOSSuspendFix(game:Game){
-		const context = sound.context.audioContext;
-		game.app.state.pause.subscribe((pause) => {
-			if (!pause) {
-				if (context.state === 'suspended' || (context.state as string) === 'interrupted' || (context.state as string) === 'suspending') {
-					context.resume();
-				}
-			}
-		});
+        const context = sound.context.audioContext;
+        let isResuming = false;
+        const forceResumeAudio = ()=>{
+            if(!isResuming){
+                isResuming = true;
+                context.resume().then(
+                    ()=>{isResuming = false;},
+                    (reason)=>{
+                        if (process.env.NODE_ENV === 'development'){
+                            console.warn('Audio Context not resumed. reason: ', reason, ' context.state: ', context.state);
+                        }
+                        isResuming = false;
+                    }
+                );
+            }
+        };
+        game.app.state.pause.subscribe((pause) => {
+            if (!pause) {
+                if (context.state === 'suspended' || (context.state as string) === 'interrupted' || (context.state as string) === 'suspending') {
+                    forceResumeAudio();
+                }
+            }
+        });
 
-		context.onstatechange = () => {
-			if ((context.state === 'suspended' || (context.state as string) === 'interrupted' || (context.state as string) === 'suspending') && document.hasFocus() && !game.app.state.pause.value) {
-				context.resume();
-			}
-		};
-
-		window.addEventListener('focus', () => {
-			if ((context.state === 'suspended' || (context.state as string) === 'interrupted' || (context.state as string) === 'suspending') && !game.app.state.pause.value) {
-				context.resume();
-			}
-		});
+        window.addEventListener('focus', () => {
+            if ((context.state === 'suspended' || (context.state as string) === 'interrupted' || (context.state as string) === 'suspending') && !game.app.state.pause.value) {
+                forceResumeAudio();
+            }
+        });
     }
 
     /**
