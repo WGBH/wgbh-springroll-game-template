@@ -81,9 +81,9 @@ export default class Patches{
         TextMetrics.measureFont = function(font: string): IFontMetrics
         {
             // as this method is used for preparing assets, don't recalculate things if we don't need to
-            if (TextMetrics._fonts[font])
+            if ((TextMetrics as any)._fonts[font])
             {
-                return TextMetrics._fonts[font];
+                return (TextMetrics as any)._fonts[font];
             }
 
             const properties: IFontMetrics = {
@@ -186,7 +186,7 @@ export default class Patches{
             }
 
 
-            TextMetrics._fonts[font] = properties;
+            (TextMetrics as any)._fonts[font] = properties;
 
             return properties;
         };

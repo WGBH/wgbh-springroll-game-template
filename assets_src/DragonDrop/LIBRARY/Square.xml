@@ -1,0 +1,24 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Square" itemID="6761d4ea-00000191" lastModified="1734465092">
+  <timeline>
+    <DOMTimeline name="Square" layerDepthEnabled="true">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="162.05" objectHeight="162.05" x="500.15" y="292.1" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="-581.15" ty="-373.1"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#0066CC"/>
+                  </fill>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

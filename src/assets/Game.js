@@ -27,11 +27,28 @@ const data = {
         const Graphics = animate.Graphics;
 
 
-        data.lib.LipsyncScene = class extends Container {
+        data.lib.DragDropButton = class extends Container {
             constructor() {
                 super();
                 const instance2 = new Graphics()
                     .drawCommands(data.shapes.Game[0]);
+                const instance1 = new Text("Drag & Drop")
+                    .setStyle({
+                        fontFamily: "Arial Rounded MT Bold",
+                        fontSize: 18,
+                        fill: "#fff",
+                        leading: 2
+                    })
+                    .setTransform(13, 4.15);
+                this.addChild(instance2, instance1);
+            }
+        };
+
+        data.lib.LipsyncScene = class extends Container {
+            constructor() {
+                super();
+                const instance2 = new Graphics()
+                    .drawCommands(data.shapes.Game[1]);
                 const instance1 = new Text("Lipsync w/ rhubarb")
                     .setStyle({
                         fontFamily: "Arial Rounded MT Bold",
@@ -39,7 +56,7 @@ const data = {
                         fill: "#fff",
                         leading: 2
                     })
-                    .setTransform(-96.95, -10.35);
+                    .setTransform(-112.95, -10.35);
                 this.addChild(instance2, instance1);
             }
         };
@@ -48,7 +65,7 @@ const data = {
             constructor() {
                 super();
                 const instance1 = new Graphics()
-                    .drawCommands(data.shapes.Game[2]);
+                    .drawCommands(data.shapes.Game[3]);
                 this.addChild(instance1);
             }
         };
@@ -59,26 +76,28 @@ const data = {
                     duration: 2
                 });
                 const instance3 = new Graphics()
-                    .drawCommands(data.shapes.Game[5]);
+                    .drawCommands(data.shapes.Game[6]);
                 const instance2 = new Graphics()
-                    .drawCommands(data.shapes.Game[4]);
+                    .drawCommands(data.shapes.Game[5]);
                 const instance1 = new Graphics()
-                    .drawCommands(data.shapes.Game[3]);
+                    .drawCommands(data.shapes.Game[4]);
                 const instance4 = new Graphics()
-                    .drawCommands(data.shapes.Game[6])
+                    .drawCommands(data.shapes.Game[7])
                     .setTransform(140.35, 38.75);
                 this.addTimedChild(instance3, 0, 1)
                     .addTimedChild(instance2, 0, 1, {
                         "0": {
                             x: 140.35,
                             y: 38.75
-                        }
+                        },
+                        "1": {}
                     })
                     .addTimedChild(instance1, 0, 1, {
                         "0": {
                             x: 140.35,
                             y: 28.85
-                        }
+                        },
+                        "1": {}
                     })
                     .addTimedChild(instance4, 1, 1);
             }
@@ -88,7 +107,7 @@ const data = {
             constructor() {
                 super();
                 const instance2 = new Graphics()
-                    .drawCommands(data.shapes.Game[7]);
+                    .drawCommands(data.shapes.Game[8]);
                 const instance1 = new data.lib.Button()
                     .setTransform(-98.35, -37.2);
                 this[instance1.name = "button"] = instance1;
@@ -100,7 +119,7 @@ const data = {
             constructor(mode) {
                 super({ mode: mode, duration: 117, loop: false });
                 const instance1 = new Graphics()
-                    .drawCommands(data.shapes.Game[8]);
+                    .drawCommands(data.shapes.Game[9]);
                 this.addTimedChild(instance1);
             }
         };
@@ -109,7 +128,7 @@ const data = {
             constructor(mode) {
                 super({ mode: mode, duration: 117, loop: false });
                 const instance2 = new Graphics()
-                    .drawCommands(data.shapes.Game[9]);
+                    .drawCommands(data.shapes.Game[10]);
                 const instance1 = new Graphic1(MovieClip.SYNCHED);
                 this.addTimedChild(instance2)
                     .addTimedChild(instance1, 0, 117, {
@@ -158,7 +177,7 @@ const data = {
             constructor(mode) {
                 super({ mode: mode, duration: 123, loop: false });
                 const instance1 = new Graphics()
-                    .drawCommands(data.shapes.Game[10])
+                    .drawCommands(data.shapes.Game[11])
                     .setTransform(-744.2, -383.1);
                 this.addTimedChild(instance1);
             }
@@ -178,7 +197,7 @@ const data = {
                     }
                 });
                 const instance2 = new Graphics()
-                    .drawCommands(data.shapes.Game[11])
+                    .drawCommands(data.shapes.Game[12])
                     .setTransform(-744.2, -383.1);
                 const instance1 = new Graphic2(MovieClip.SYNCHED);
                 const instance3 = new Graphic3(MovieClip.SYNCHED);
@@ -345,44 +364,44 @@ const data = {
                     duration: 1,
                     framerate: 30
                 });
+                const instance14 = new Graphics()
+                    .drawCommands(data.shapes.Game[17]);
                 const instance13 = new Graphics()
-                    .drawCommands(data.shapes.Game[16]);
-                const instance12 = new Graphics()
-                    .drawCommands(data.shapes.Game[15])
+                    .drawCommands(data.shapes.Game[16])
                     .setTransform(-5.15, -2.6);
+                const instance12 = new Graphics()
+                    .drawCommands(data.shapes.Game[15]);
                 const instance11 = new Graphics()
-                    .drawCommands(data.shapes.Game[14]);
+                    .drawCommands(data.shapes.Game[14])
+                    .setTransform(30.8, -6.15);
                 const instance10 = new Graphics()
                     .drawCommands(data.shapes.Game[13])
-                    .setTransform(30.8, -6.15);
-                const instance9 = new Graphics()
-                    .drawCommands(data.shapes.Game[12])
                     .setTransform(4.2, 12.6);
-                const instance8 = new Graphics()
-                    .drawCommands(data.shapes.Game[12])
+                const instance9 = new Graphics()
+                    .drawCommands(data.shapes.Game[13])
                     .setTransform(4.2, 90);
-                const instance7 = new data.lib.Screen()
+                const instance8 = new data.lib.Screen()
                     .setTransform(744.2, 383.1);
-                this[instance7.name = "screen"] = instance7;
-                const instance6 = new data.lib.Remote()
+                this[instance8.name = "screen"] = instance8;
+                const instance7 = new data.lib.Remote()
                     .setTransform(762.85, 695.8);
-                this[instance6.name = "remote"] = instance6;
-                const instance5 = new data.lib.Paper()
+                this[instance7.name = "remote"] = instance7;
+                const instance6 = new data.lib.Paper()
                     .setTransform(1150.2, 389);
-                const instance4 = new Graphics()
-                    .drawCommands(data.shapes.Game[1]);
-                const instance3 = new Text("Game + captions (here)")
+                const instance5 = new Graphics()
+                    .drawCommands(data.shapes.Game[2]);
+                const instance4 = new Text("Game + captions (here)")
                     .setStyle({
                         fontFamily: "Arial Rounded MT Bold",
                         fontSize: 18,
                         fill: "#fff",
                         leading: 2
                     })
-                    .setTransform(1042.95, 302.8);
-                const instance2 = new data.lib.LipsyncScene()
+                    .setTransform(1034.95, 302.8);
+                const instance3 = new data.lib.LipsyncScene()
                     .setTransform(1148.9, 355.6);
-                this[instance2.name = "lipsyncScene"] = instance2;
-                const instance1 = new Text("WGBH TV Guide \n(example scenes)")
+                this[instance3.name = "lipsyncScene"] = instance3;
+                const instance2 = new Text("WGBH TV Guide \n(example scenes)")
                     .setStyle({
                         fontFamily: "Arial Rounded MT Bold",
                         fontSize: 20,
@@ -390,8 +409,11 @@ const data = {
                         leading: 2
                     })
                     .setAlign("center")
-                    .setTransform(1146.85, 235.55);
-                this.addChild(instance13, instance12, instance11, instance10, instance9, instance8, instance7, instance6, instance5, instance4, instance3, instance2, instance1);
+                    .setTransform(1148.85, 237.55);
+                const instance1 = new data.lib.DragDropButton()
+                    .setTransform(1022.95, 383.6);
+                this[instance1.name = "dragScene"] = instance1;
+                this.addChild(instance14, instance13, instance12, instance11, instance10, instance9, instance8, instance7, instance6, instance5, instance4, instance3, instance2, instance1);
             }
         };
         data.stage = data.lib.Game;

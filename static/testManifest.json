@@ -1,0 +1,4 @@
+[
+    {"type":"image", "id":"logo", "path":"img/logo.png"},
+    {"type":"data", "id":"demoConfig", "path":"demoConfig.json"}
+]

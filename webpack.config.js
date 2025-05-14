@@ -2,19 +2,24 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlConfig = require(path.join(__dirname, 'html.config'));
+const CleanPlugin = require('clean-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const deploy = path.join(__dirname, 'deploy');
 const images = path.join(__dirname, 'deploy/images');
 
 module.exports = env => {
     const plugins = [
+        new CleanPlugin.CleanWebpackPlugin(),
         new HtmlWebpackPlugin(HtmlConfig),
         new CopyPlugin({
             "patterns": [
                 { from: path.join(__dirname + '/src/assets/images'), to: images },
                 { from: path.join(__dirname + '/static'), to: deploy },
             ]
-        })
+        }),
+        new ESLintPlugin()
     ];
     return {
         stats: 'minimal',
@@ -38,11 +43,6 @@ module.exports = env => {
         plugins,
         module: {
             rules: [
-                {
-                    test: /\.ts$/,
-                    enforce: 'pre',
-                    loader: 'tslint-loader'
-                },
                 {
                     test: /\.ts$/,
                     use: 'ts-loader',

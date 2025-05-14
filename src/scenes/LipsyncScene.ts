@@ -3,8 +3,8 @@ import * as ArtAsset from '../assets/Lipsync';
 import * as Puppet from '../helpers/puppet/PuppetMouth';
 import {CONFIG} from '../config/config';
 import { MovieClip } from '@pixi/animate';
-import { InteractionEvent } from '@pixi/interaction';
 import { IMediaInstance } from '@pixi/sound';
+import { FederatedPointerEvent } from 'pixi.js';
 
 export default class LipsyncScene extends Scene {
 
@@ -49,8 +49,8 @@ export default class LipsyncScene extends Scene {
     preload():AssetList{
         return [
             {type:'animate', id:'Art', asset:ArtAsset, cacheInstance:true},
-            {type:'sound',id:'hello',path:'sounds/vo/hello.{ogg,mp3}',context:'vo'},
-            {type:'sound',id:'bye',path:'sounds/vo/bye.{ogg,mp3}',context:'vo'}
+            {type:'sound',id:'hello',path:['sounds/vo/hello.ogg', 'sounds/vo/hello.mp3'],context:'vo'},
+            {type:'sound',id:'bye',path:['sounds/vo/bye.ogg', 'sounds/vo/bye.mp3'],context:'vo'}
         ];
     }
 
@@ -59,30 +59,32 @@ export default class LipsyncScene extends Scene {
         this.addChild(this.art);
         this.mouthpuppet = new Puppet.PuppetMouth(this.art.mouth);
         this.mouthpuppet.rest();
-    }
 
-    start(){
+        this.eventMode = 'none';
 
-        this.art.playBtn.buttonMode = true;
-        this.art.playBtn.interactive = true;
-        this.art.playBtn.on('pointerup', (ev:InteractionEvent) => {
+        this.art.playBtn.cursor = 'pointer';
+        this.art.playBtn.eventMode = 'static';
+        this.art.playBtn.on('pointerup', (ev:FederatedPointerEvent) => {
             this.stageManager.showCaption('hello');
             this.playPuppetExample(this.mouthpuppet, "hello");
         } );
 
-        this.art.stopBtn.buttonMode = true;
-        this.art.stopBtn.interactive = true;
-        this.art.stopBtn.on('pointerup', (ev:InteractionEvent) => {
+        this.art.stopBtn.cursor = 'pointer';
+        this.art.stopBtn.eventMode = 'static';
+        this.art.stopBtn.on('pointerup', (ev:FederatedPointerEvent) => {
             this.stopPuppetExample(this.mouthpuppet);
         } );
 
-        this.art.homeBtn.buttonMode = true;
-        this.art.homeBtn.interactive = true;
-        this.art.homeBtn.on('pointerup', (ev:InteractionEvent) => {  
+        this.art.homeBtn.cursor = 'pointer';
+        this.art.homeBtn.eventMode = 'static';
+        this.art.homeBtn.on('pointerup', (ev:FederatedPointerEvent) => {  
             this.stopPuppetExample(this.mouthpuppet);
             this.changeScene('game');
         } );
+    }
 
+    start(){
+        this.eventMode = 'passive';
     }
 
     stopPuppetExample = (mouthpuppet:Puppet.PuppetMouth) => {

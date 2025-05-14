@@ -1,0 +1,24 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Circle" itemID="6761d4ff-00000196" lastModified="1734464767">
+  <timeline>
+    <DOMTimeline name="Circle" layerDepthEnabled="true">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="188.05" objectHeight="188.05" x="972.25" y="300.1" selected="true" endAngle="0">
+                  <matrix>
+                    <Matrix tx="-1066.3" ty="-394.1"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#99FF00"/>
+                  </fill>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

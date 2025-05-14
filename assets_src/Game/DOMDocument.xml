@@ -1,6 +1,7 @@
-<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="1536" height="768" frameRate="30" currentTimeline="1" xflVersion="2.971" creatorInfo="Adobe Animate" platform="Macintosh" versionInfo="Saved by Animate Macintosh 20.5 build 31044" majorVersion="20" minorVersion="5" buildNumber="31044" guidesSnapTo="false" viewAngle3D="110.955592495494" vanishingPoint3DX="768" vanishingPoint3DY="384" nextSceneIdentifier="2" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" filetypeGUID="D30F8A0D-8234-44E1-9E30-EE48B415BE9D" filetypeName="PixiAnimate" fileGUID="ACC79270925F48F6B9A7B73C4B14D82F">
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="1536" height="768" frameRate="30" currentTimeline="1" xflVersion="23.0" creatorInfo="Adobe Animate" platform="Macintosh" versionInfo="Saved by Animate Macintosh 24.0 build 54" majorVersion="24" buildNumber="54" guidesSnapTo="false" viewAngle3D="110.955592495494" vanishingPoint3DX="768" vanishingPoint3DY="384" nextSceneIdentifier="2" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" filetypeGUID="D30F8A0D-8234-44E1-9E30-EE48B415BE9D" filetypeName="PixiAnimate" fileGUID="ACC79270925F48F6B9A7B73C4B14D82F">
      <symbols>
           <Include href="Button.xml" loadImmediate="false" itemID="5c242ce7-0000042f" lastModified="1545875163"/>
+          <Include href="DragDropButton.xml" loadImmediate="false" itemID="6761d2ee-00000189" lastModified="1734464238"/>
           <Include href="Eyes.xml" itemIcon="1" loadImmediate="false" itemID="5c2433c3-00000466" lastModified="1545876419"/>
           <Include href="LipsyncScene.xml" loadImmediate="false" itemID="5e6fd93c-0000000d" lastModified="1584388952"/>
           <Include href="Paper.xml" loadImmediate="false" itemID="5e6fda2c-00000014" lastModified="1584388652"/>
@@ -12,7 +13,23 @@
      <timelines>
           <DOMTimeline name="Scene 1">
                <layers>
-                    <DOMLayer name="ui" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+                    <DOMLayer name="dragScene" color="#FF0000" current="true" isSelected="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="DragDropButton" name="dragScene" selected="true">
+                                             <matrix>
+                                                  <Matrix tx="1022.95" ty="383.6"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="129.45" y="14.5"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="ui" color="#9933CC" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
                                    <elements>
@@ -28,6 +45,10 @@
                                                   <Edge cubics="!25498 5959(;25498,5959 25498,6539 25498,6539q25498 5959 25498 6539);"/>
                                                   <Edge cubics="!20459 5959(;20459,5959 25498,5959 25498,5959q20459 5959 25498 5959);"/>
                                                   <Edge cubics="!25498 6539(;25498,6539 20459,6539 20459,6539q25498 6539 20459 6539);"/>
+                                                  <Edge cubics="!20459 8252(;20459,8252 20459,7672 20459,7672q20459 8252 20459 7672);"/>
+                                                  <Edge cubics="!25498 7672(;25498,7672 25498,8252 25498,8252q25498 7672 25498 8252);"/>
+                                                  <Edge cubics="!20459 7672(;20459,7672 25498,7672 25498,7672q20459 7672 25498 7672);"/>
+                                                  <Edge cubics="!25498 8252(;25498,8252 20459,8252 20459,8252q25498 8252 20459 8252);"/>
                                              </edges>
                                         </DOMShape>
                                         <DOMStaticText fontRenderingMode="standard" left="-8" width="239.95" height="20.85" isSelectable="false">
@@ -51,7 +72,7 @@
                                                   <Point/>
                                              </transformationPoint>
                                         </DOMSymbolInstance>
-                                        <DOMStaticText selected="true" fontRenderingMode="standard" left="-9.45" width="169.7" height="48.3" autoExpand="true" isSelectable="false">
+                                        <DOMStaticText fontRenderingMode="standard" left="-9.45" width="169.7" height="48.3" autoExpand="true" isSelectable="false">
                                              <matrix>
                                                   <Matrix tx="1071.45" ty="237.55"/>
                                              </matrix>

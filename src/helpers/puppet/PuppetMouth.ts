@@ -83,7 +83,7 @@ export class PuppetMouth {
 
     getFrameValue(totalTime:number):string {
         for (let i = this.syncRhubarb.length - 2; i >= 0; i=i-2) {
-            if(this.syncRhubarb[i] <= totalTime) {
+            if(this.syncRhubarb[i] as number <= totalTime) {
                 return this.syncRhubarb[i+1] as string;
             }
         }

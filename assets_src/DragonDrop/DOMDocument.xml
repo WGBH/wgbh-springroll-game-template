@@ -1,0 +1,101 @@
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="1624" height="750" frameRate="30" currentTimeline="1" xflVersion="23.0" creatorInfo="Adobe Animate" platform="Macintosh" versionInfo="Saved by Animate Macintosh 24.0 build 54" majorVersion="24" buildNumber="54" guidesSnapTo="false" viewAngle3D="113.905639833043" vanishingPoint3DX="812" vanishingPoint3DY="375" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" filetypeGUID="D30F8A0D-8234-44E1-9E30-EE48B415BE9D" filetypeName="PixiAnimate" fileGUID="6301106FAD7945C09C9980EC2C746FA0">
+     <symbols>
+          <Include href="Circle.xml" loadImmediate="false" itemID="6761d4ff-00000196" lastModified="1734464767"/>
+          <Include href="HomeButton.xml" loadImmediate="false" itemID="6761d69f-00000190" lastModified="1734465183"/>
+          <Include href="Square.xml" loadImmediate="false" itemID="6761d4ea-00000191" lastModified="1734465092"/>
+          <Include href="Triangle.xml" loadImmediate="false" itemID="6761d623-00000187" lastModified="1734465083"/>
+     </symbols>
+     <timelines>
+          <DOMTimeline name="Scene 1" layerDepthEnabled="true">
+               <layers>
+                    <DOMLayer name="homeButton" color="#FF4FFF" current="true" isSelected="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="HomeButton" name="homeButton">
+                                             <matrix>
+                                                  <Matrix tx="94.25" ty="82.6"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="triangle" color="#9933CC" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="Triangle" name="triangle">
+                                             <matrix>
+                                                  <Matrix tx="886.5" ty="509.1"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="circle" color="#FF800A" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="Circle" name="circle">
+                                             <matrix>
+                                                  <Matrix tx="976.55" ty="242"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="square" color="#009999" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="Square" name="square">
+                                             <matrix>
+                                                  <Matrix tx="635.45" ty="343.05"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="bg" color="#FF0000" locked="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMShape>
+                                             <fills>
+                                                  <FillStyle index="1">
+                                                       <SolidColor color="#CCCCCC"/>
+                                                  </FillStyle>
+                                             </fills>
+                                             <edges>
+                                                  <Edge fillStyle1="1" edges="!0 0S2|32480 0!32480 0|32480 15000!32480 15000|0 15000!0 15000|0 0"/>
+                                             </edges>
+                                        </DOMShape>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+               </layers>
+          </DOMTimeline>
+     </timelines>
+     <scripts>
+          <GlobalScripts language="Javascript"/>
+     </scripts>
+     <PrinterSettings platform="macintosh"/>
+     <publishHistory/>
+</DOMDocument>

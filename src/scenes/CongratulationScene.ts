@@ -25,10 +25,11 @@ export default class CongratulationScene extends Scene {
         score.anchor.x = 0.5;
         score.anchor.y = 0.5;
         this.addChild(score);
+        this.eventMode = 'none';
     }
 
     start(){
-        this.interactive = true;
+        this.eventMode = 'static';
         this.cursor = 'pointer';
         this.on('pointertap', ()=>{this.changeScene('title');});
     }
